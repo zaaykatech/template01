@@ -8,6 +8,12 @@ export interface ThemeConfig {
   id: string;
   name: string;
   description: string;
+  logoUrl?: string;
+  heroVideoUrl?: string;
+  instagramUrl?: string;
+  mobileNumber?: string;
+  address?: string;
+  reviewUrl?: string;
   colors: {
     background: string;
     surface: string;

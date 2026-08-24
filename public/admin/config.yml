@@ -1,0 +1,106 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "menu"
+    label: "Menu"
+    files:
+      - file: "content/menu.json"
+        name: "menu"
+        label: "Restaurant Menu"
+        fields:
+          - name: "categories"
+            label: "Categories"
+            widget: "list"
+            fields:
+              - {name: "id", label: "Category ID", widget: "string"}
+              - {name: "title", label: "Category Title", widget: "string"}
+              - {name: "subtitle", label: "Subtitle", widget: "string", required: false}
+              - {name: "preheader", label: "Preheader", widget: "string", required: false}
+              - {name: "visible", label: "Show Category", widget: "boolean", default: true}
+              - name: "items"
+                label: "Items"
+                widget: "list"
+                fields:
+                  - {name: "name", label: "Item Name", widget: "string"}
+                  - {name: "description", label: "Description", widget: "text", required: false}
+                  - {name: "price", label: "Price", widget: "string", required: false}
+                  - {name: "prices", label: "Prices Object (Optional)", widget: "object", required: false, fields: [{name: "ny", widget: "number", required: false}, {name: "neap", widget: "number", required: false}]}
+                  - {name: "isMostOrdered", label: "Most Ordered", widget: "boolean", default: false, required: false}
+                  - {name: "isSignature", label: "Signature", widget: "boolean", default: false, required: false}
+                  - {name: "customTag", label: "Custom Tag", widget: "string", required: false}
+                  - {name: "isMonsoon", label: "Monsoon Special", widget: "boolean", default: false, required: false}
+                  - {name: "_isSquareMobile", label: "Square on Mobile", widget: "boolean", default: false, required: false}
+                  - {name: "_isForcedRectangular", label: "Forced Rectangular", widget: "boolean", default: false, required: false}
+                  - {name: "available", label: "Available", widget: "boolean", default: true, required: false}
+
+  - name: "theme"
+    label: "Theme"
+    files:
+      - file: "content/theme.json"
+        name: "theme"
+        label: "Website Theme"
+        fields:
+          - {name: "id", label: "Theme ID", widget: "string"}
+          - {name: "name", label: "Theme Name", widget: "string"}
+          - {name: "description", label: "Description", widget: "string"}
+          - {name: "logoUrl", label: "Logo Image", widget: "image", required: false}
+          - {name: "heroVideoUrl", label: "Hero Video URL", widget: "string", required: false}
+          - {name: "instagramUrl", label: "Instagram URL", widget: "string", required: false}
+          - {name: "mobileNumber", label: "Mobile Number", widget: "string", required: false}
+          - {name: "address", label: "Address", widget: "text", required: false}
+          - {name: "reviewUrl", label: "Review URL", widget: "string", required: false}
+          - name: "colors"
+            label: "Colors"
+            widget: "object"
+            fields:
+              - {name: "background", label: "Background", widget: "color"}
+              - {name: "surface", label: "Surface", widget: "color"}
+              - {name: "primary", label: "Primary", widget: "color"}
+              - {name: "secondary", label: "Secondary", widget: "color"}
+              - {name: "accent", label: "Accent", widget: "color"}
+              - {name: "text", label: "Text", widget: "color"}
+              - {name: "muted", label: "Muted", widget: "color"}
+              - {name: "border", label: "Border", widget: "color"}
+          - name: "typography"
+            label: "Typography"
+            widget: "object"
+            fields:
+              - {name: "heading", label: "Heading Font", widget: "string"}
+              - {name: "body", label: "Body Font", widget: "string"}
+          - name: "radius"
+            label: "Border Radius"
+            widget: "object"
+            fields:
+              - {name: "small", label: "Small", widget: "string"}
+              - {name: "medium", label: "Medium", widget: "string"}
+              - {name: "large", label: "Large", widget: "string"}
+          - name: "shadows"
+            label: "Shadows"
+            widget: "object"
+            fields:
+              - {name: "card", label: "Card Shadow", widget: "string"}
+              - {name: "floating", label: "Floating Shadow", widget: "string"}
+          - name: "spacing"
+            label: "Spacing"
+            widget: "object"
+            fields:
+              - {name: "xs", label: "XS", widget: "string"}
+              - {name: "sm", label: "SM", widget: "string"}
+              - {name: "md", label: "MD", widget: "string"}
+              - {name: "lg", label: "LG", widget: "string"}
+              - {name: "xl", label: "XL", widget: "string"}
+          - name: "components"
+            label: "Components"
+            widget: "object"
+            fields:
+              - {name: "cardStyle", label: "Card Style", widget: "select", options: ["soft", "outlined", "glass", "flat"]}
+              - {name: "buttonStyle", label: "Button Style", widget: "select", options: ["pill", "rounded", "square"]}
+              - {name: "categoryStyle", label: "Category Style", widget: "select", options: ["pill", "underline", "minimal"]}
+              - {name: "headingStyle", label: "Heading Style", widget: "select", options: ["script", "serif", "sans"]}
+              - {name: "imageStyle", label: "Image Style", widget: "select", options: ["rounded", "square", "organic"]}

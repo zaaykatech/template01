@@ -1,0 +1,65 @@
+{
+  "categories": [
+    {
+      "id": "summer-specials",
+      "title": "Summer Specials",
+      "visible": true,
+      "items": [
+        {
+          "name": "ABO (Apple, Beetroot and Orange) Juice",
+          "price": "200",
+          "customTag": "Barista's Choice",
+          "available": true
+        },
+        {
+          "name": "Green Apple Iced Tea",
+          "price": "200",
+          "available": true
+        },
+        {
+          "name": "Raspberry Lemonade",
+          "price": "230",
+          "available": true
+        },
+        {
+          "name": "Caramel Matcha Latte",
+          "price": "250",
+          "available": true
+        },
+        {
+          "name": "Strawberry Espresso Tonic",
+          "price": "260",
+          "customTag": "Barista's Choice",
+          "available": true
+        },
+        {
+          "name": "Fizzy Coconut Cold Brew",
+          "price": "260",
+          "available": true
+        },
+        {
+          "name": "Mango Chilli Cooler",
+          "price": "280",
+          "available": true
+        },
+        {
+          "name": "Rose Pistachio Shake",
+          "price": "320",
+          "customTag": "trending",
+          "available": true
+        },
+        {
+          "name": "Mango Cheesecake",
+          "price": "280",
+          "available": true
+        },
+        {
+          "name": "Blueberry Tiramisu",
+          "price": "280",
+          "customTag": "trending",
+          "available": true
+        }
+      ]
+    }
+  ]
+}

@@ -2,8 +2,7 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import { MenuItem as MenuItemType, MenuSection } from '@/types';
-import { subscribeToCategories, subscribeToMenuItems, subscribeToTheme, getRestaurantIdBySlug, RestaurantSettings } from '@/lib/firebase/menuService';
-import { resolveTheme, applyTheme } from '@/lib/themes/themeUtils';
+import { applyTheme } from '@/lib/themes/themeUtils';
 import { ThemeConfig } from '@/lib/themes/themeTypes';
 
 const MenuItemCard = ({ item }: { item: MenuItemType }) => {
@@ -600,10 +599,16 @@ import dynamic from 'next/dynamic';
 
 const RainEffectCanvas = dynamic(() => import('../components/RainEffectCanvas'), { ssr: false });
 
-export default function MenuClient({ restaurantSlug }: { restaurantSlug: string }) {
-    const [sections, setSections] = useState<MenuSection[]>([]);
-    const [theme, setTheme] = useState<RestaurantSettings | null>(null);
-    const [loading, setLoading] = useState(true);
+export default function MenuClient({ 
+    initialSections, 
+    initialTheme 
+}: { 
+    initialSections: MenuSection[], 
+    initialTheme: ThemeConfig 
+}) {
+    const [sections] = useState<MenuSection[]>(initialSections);
+    const [theme] = useState<ThemeConfig>(initialTheme);
+    const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -615,73 +620,11 @@ export default function MenuClient({ restaurantSlug }: { restaurantSlug: string 
     const navLinks = sections;
 
     useEffect(() => {
-        let unsubscribeCategories: (() => void) | undefined;
-        let unsubscribeItems: (() => void) | undefined;
-        let unsubscribeTheme: (() => void) | undefined;
-
-        const loadRestaurantData = async () => {
-            setLoading(true);
-            try {
-                const restaurantId = await getRestaurantIdBySlug(restaurantSlug);
-                if (!restaurantId) {
-                    setError('Restaurant not found');
-                    setLoading(false);
-                    return;
-                }
-
-                unsubscribeTheme = subscribeToTheme(restaurantId, (newSettings: any) => {
-                    if (newSettings) {
-                        const resolvedTheme = resolveTheme(newSettings);
-                        setTheme(newSettings); // keep settings for backward compatibility if components rely on it
-                        
-                        // Apply HSL theme values to the document root
-                        const root = document.documentElement;
-                        applyTheme(resolvedTheme, root);
-                    }
-                });
-
-
-                unsubscribeCategories = subscribeToCategories(restaurantId, (categories) => {
-                    console.log('Categories fetched:', categories.length, categories);
-                    unsubscribeItems = subscribeToMenuItems(restaurantId, (items) => {
-                        console.log('Items fetched:', items.length, items);
-                        const newSections = categories
-                            .filter(cat => cat.isActive !== false) // hide inactive categories
-                            .map(cat => ({
-                                id: cat.id,
-                                title: cat.name,
-                                subtitle: cat.description || '',
-                                preheader: '',
-                                items: items
-                                    .filter(item => item.categoryId === cat.id && item.isActive !== false) // hide inactive items
-                                    .map(item => ({
-                                        ...item,
-                                        price: item.price ? `₹${item.price}` : undefined,
-                                        prices: item.prices ? { ny: `₹${item.prices.ny}`, neap: `₹${item.prices.neap}` } : undefined
-                                    })) as any[]
-                            }))
-                            .filter(section => section.items.length > 0); // hide empty sections
-                        console.log('New sections built:', newSections);
-                        setSections(newSections);
-                        setLoading(false);
-                    });
-                });
-
-            } catch (err) {
-                console.error(err);
-                setError('Failed to load menu');
-                setLoading(false);
-            }
-        };
-
-        loadRestaurantData();
-
-        return () => {
-            if (unsubscribeCategories) unsubscribeCategories();
-            if (unsubscribeItems) unsubscribeItems();
-            if (unsubscribeTheme) unsubscribeTheme();
-        };
-    }, [restaurantSlug]);
+        if (theme) {
+            const root = document.documentElement;
+            applyTheme(theme, root);
+        }
+    }, [theme]);
 
     useEffect(() => {
         if (!sections.length) return;
