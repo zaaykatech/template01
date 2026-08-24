@@ -9,7 +9,8 @@
           "name": "ABO (Apple, Beetroot and Orange) Juice",
           "price": "200",
           "customTag": "Barista's Choice",
-          "available": true
+          "available": true,
+          "isMostOrdered": true
         },
         {
           "name": "Green Apple Iced Tea",
