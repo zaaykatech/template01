@@ -1,0 +1,188 @@
+category_id,category_title,name,price,tag,is_signature,is_most_ordered,description
+2,Classic Espresso Bar,Espresso (Hot/Iced),₹100,,,,
+2,Classic Espresso Bar,Americano (Hot/Iced),₹140,,,,
+2,Classic Espresso Bar,Cappuccino (Hot/Iced),₹160,,,,
+2,Classic Espresso Bar,Latte (Hot/Iced),₹170,,,,
+2,Classic Espresso Bar,Cortado (Hot/Iced),₹190,,,,Equal parts of espresso and steamed milk
+2,Classic Espresso Bar,Flat White (Hot/Iced),₹200,,,,Higher proportion of espresso to milk than a latte 
+2,Classic Espresso Bar,Mocha (Hot/Iced),₹220,,,,"A sweet symphony of espresso, velvety chocolate, and milk"
+3,Craft Coffees,Irish Cappuccino (Hot/Iced),₹220,,,TRUE,
+3,Craft Coffees,Caramel Latte (Hot/Iced),₹230,,,,
+3,Craft Coffees,Hazelnut Cappuccino (Hot/Iced),₹220,,,,
+3,Craft Coffees,French Vanilla Cappuccino (Hot/Iced),₹210,,,,
+3,Craft Coffees,Dark Chocolate Mocha (Hot/Iced),₹240,,,,
+3,Craft Coffees,Saffron Turmeric Latte (Hot/Iced),₹250,,,TRUE,
+3,Craft Coffees,Tiramisu Cappuccino (Hot/Iced),₹260,,,,
+3,Craft Coffees,Lotus Biscoff Latte (Hot/Iced),₹250,,,,
+3,Craft Coffees,Classic Iced Coffee,₹250,,,,
+3,Craft Coffees,Vietnamese Iced Coffee,₹260,,,TRUE,
+3,Craft Coffees,Red Velvet Mocha,₹250,Barista's Choice,,,
+4,Frappe To Go,Hazelnut Frappe,₹230,,,,
+4,Frappe To Go,Irish Frappe,₹230,,,TRUE,
+4,Frappe To Go,Java Chip Frappe,₹250,,,,
+4,Frappe To Go,Toffee Caramel Frappe,₹230,,,,
+4,Frappe To Go,Tiramisu Frappe,₹260,,,,
+4,Frappe To Go,Biscoff Frappe,₹250,,,,
+4,Frappe To Go,Brownie Frappe,₹250,,,,
+4,Frappe To Go,9:50 Signature Frappe,₹220,,TRUE,,"Your go-to strong cold coffee with a hint of vanilla, designed to relish anytime and every time"
+5,Cold Brews,Fizzy Coconut Cold Brew,₹260,,,,
+5,Cold Brews,Pomegranate Cold Brew,₹230,,,,
+5,Cold Brews,Orange Cold Brew,₹230,,,,
+5,Cold Brews,Classic Espresso Tonic (E&T),₹220,,,,An evergreen blend of rich espresso and sparkling tonic water
+5,Cold Brews,Ginger Ale Cold Brew,₹220,,,,
+5,Cold Brews,Pineapple Cold Brew,₹230,,,,
+5,Cold Brews,Whisky Cold Brew,₹280,,,TRUE,"Crafted from 16 hours of brewing barrel-aged beans, this strong cold brew offers deep and rich flavors."
+5,Cold Brews,9:50 Signature Cold Brew,₹270,,TRUE,,"A drool-worthy blend of refreshing juices, vibrant fruit chunks, and our in house cold brew."
+6,Affogato,Classic Affogato,₹220,,,,
+6,Affogato,Dark Chocolate Affogato,₹240,,,,
+6,Affogato,Caramel Pistachio Affogato,₹240,,,TRUE,
+6,Affogato,9:50 Signature Affogato,₹250,,TRUE,,Classic Affogato gets a vibrant makeover with an assortment of fresh fruits.
+7,Matcha,Caramel Matcha Latte,₹270,,,,
+7,Matcha,Matcha Latte,₹200,,,,
+7,Matcha,Iced Matcha,₹220,,,,
+7,Matcha,Matcha Frappe,₹230,,,,
+7,Matcha,Mango Matcha Latte,₹250,,,,
+7,Matcha,Strawberry Matcha Latte,₹250,,,,
+7,Matcha,Coconut Matcha Latte,₹260,,,TRUE,
+7,Matcha,Lavender Love Matcha,₹260,,,,
+8,Hot Teas,Classic Masala Chai,₹80,,,,
+8,Hot Teas,Moroccan Mint Tea,₹150,,,,Soothing green tea infused with fresh mint.
+8,Hot Teas,Lemon Ginger Tea,₹140,,,,
+8,Hot Teas,Lavender Earl Grey Tea,₹180,,,TRUE,Experience the tradition of black tea blended with calming lavender and traditional Earl Grey notes.
+9,Iced Teas,Green Apple Iced Tea,₹200,,,,
+9,Iced Teas,Lemon Iced Tea,₹160,,,,
+9,Iced Teas,Peach Iced Tea,₹180,,,,
+9,Iced Teas,Irish Iced Tea,₹190,,,,
+9,Iced Teas,Hibiscus Iced Tea,₹220,,,TRUE,
+9,Iced Teas,Hibiscus Strawberry Iced Tea,₹250,trending,,,
+9,Iced Teas,Earl Grey Iced Tea,250,New,,TRUE,
+10,Hot Chocolate,Classic Hot Chocolate,₹210,,,,
+10,Hot Chocolate,Spiced Hot Chocolate,₹230,,,,"Adding a touch of spice with cinnamon to the classic hot chocolate, making it a perfect warm drink for chilly days."
+10,Hot Chocolate,Nutella Hot Chocolate,₹250,,,,
+10,Hot Chocolate,Tiramisu Hot Chocolate,₹270,,,TRUE,
+11,Milk Shakes,Rose Pistachio Shake,₹340,trending,,,
+11,Milk Shakes,Oreo Shake,₹220,,,,
+11,Milk Shakes,Kitkat Shake,₹220,,,,
+11,Milk Shakes,Strawberry Shake,₹230,,,,
+11,Milk Shakes,French Vanilla Shake,₹240,,,,
+11,Milk Shakes,Brownie Shake,₹260,,,,
+11,Milk Shakes,Red Velvet Shake,300,New,,TRUE,
+11,Milk Shakes,Nutella Shake,₹270,,,,
+11,Milk Shakes,Lotus Biscoff Shake,₹270,,,,
+11,Milk Shakes,Blueberry Cheesecake Shake,₹300,,,,
+11,Milk Shakes,Tropical Avocado Shake,₹320,,,TRUE,"A silky-smooth shake made with creamy avocado, tropical pineapple, and a touch of mango-pure bliss in a glass."
+12,Craft Mocktails,Raspberry Lemonade,₹250,,,,
+12,Craft Mocktails,Strawberry Espresso Tonic,₹260,Barista's Choice,,,
+12,Craft Mocktails,Mango Chilli Cooler,₹280,,,,
+12,Craft Mocktails,Virgin Mojito,₹180,,,,
+12,Craft Mocktails,Masala Lemonade,₹190,,,,
+12,Craft Mocktails,Watermelon Mojito,₹200,,,,
+12,Craft Mocktails,Coffee Lemonade,₹220,,,TRUE,"A zesty, caffeinated kick that's bold, bright, and totally refreshing."
+12,Craft Mocktails,Shirley Temple,₹220,,,,A dreamy mix of citrus fruits and ginger ale garnished with lime wedges and mint.
+12,Craft Mocktails,Cinderella,₹230,,,,"A pomegranate fairy tale in a glass, with a fizzy twist."
+12,Craft Mocktails,Passionate Love,₹240,,,,An addictive blend of passion fruit and citrus flavours.
+12,Craft Mocktails,Pomegranate Mint Cooler,₹300,Barista's Choice,,,
+13,Blue Dream,Blue Pea Iced Latte,₹200,,,,
+13,Blue Dream,Blue Pea Sparkler,₹240,,,TRUE,"A fizzy, floral delight with the refreshing taste of blue pea flower."
+13,Blue Dream,Blue Pea Coconut Cooler,₹270,,,,
+13,Blue Dream,Blue Pea Matcha Smoothie,₹300,,,,
+14,Healthy Juices,"ABO (Apple, Beetroot and Orange) Juice",₹250,Barista's Choice,,,
+14,Healthy Juices,Carrot Ginger Juice,₹180,,,,
+14,Healthy Juices,Watermelon Mint Juice,₹200,,,,
+14,Healthy Juices,ABC,₹250,,,TRUE,"A refreshing blend of red apple, beetroot, and English carrot."
+15,Smoothies,Mango Madness Smoothie,₹280,,,,
+15,Smoothies,Berry Powerful Smoothie,₹300,,,TRUE,
+15,Smoothies,Nutty Buddy Smoothie,₹310,,,,"Peanut butter, dark chocolate, and cocoa."
+15,Smoothies,Avocado Coconut Smoothie,₹340,,,,
+15,Smoothies,9:50 Signature Smoothie,₹350,,TRUE,,All about fresh fruits!
+16,Beverage Companions,Red Velvet Cookie,₹150,,,,
+16,Beverage Companions,Brookie (Cookie with a Brownie Twist),₹130,,,,
+16,Beverage Companions,Butter Toast ,₹200,,,,
+16,Beverage Companions,Pesto Ricotta Toast ,₹350,Trending ,,,
+16,Beverage Companions,Classic Avocado Toast,₹250,,,TRUE,
+17,Healthy Salads,Classic Caesar Salad,₹200,,,,"The perfect balance of crisp lettuce, creamy dressing, and crunchy croutons."
+17,Healthy Salads,Greek Salad,₹220,,,TRUE,A vibrant mix of exotic vegetables and Mediterranean flavors.
+17,Healthy Salads,Yogurt Salad,₹220,,,,
+17,Healthy Salads,Peri Peri Paneer Salad,₹250,,,,
+18,Bites for Sides,Nachos with Salsa,₹200,,,,
+18,Bites for Sides,Overloaded Nachos,₹220,,,,"Crispy nachos loaded with salsa, veggies, cheese and jalapeño sauce."
+18,Bites for Sides,Cherry Tomato & Cottage Cheese Bruschetta,₹250,,,,
+18,Bites for Sides,Pesto Cottage Cheese in Focaccia Bread,₹320,,,TRUE,
+18,Bites for Sides,Paneer Tikka in Focaccia Bread,₹340,chefs choice,,,
+18,Bites for Sides,Sourdough Mushroom Melt with Pesto Sauce,₹350,chefs choice,,,
+19,Fries Corner,Simply Salted Fries,₹160,,,,
+19,Fries Corner,Potato Wedges,₹220,,,,
+19,Fries Corner,Parmesan Truffle Fries,₹230,,,,
+19,Fries Corner,Peri Peri Fries,₹210,,,,
+19,Fries Corner,Onion Rings,₹220,,,,
+19,Fries Corner,Cheese Garlic Fries,₹220,,,TRUE,
+20,Sandwiches,Bombay Kaccha,₹170,,,,
+20,Sandwiches,Bombay Grilled ,₹190,,,,
+20,Sandwiches,Cheese Chutney Sandwich,₹200,,,,
+20,Sandwiches,Cheese Corn Sandwich,₹210,,,,
+20,Sandwiches,Veg Grilled Sandwich,₹220,,,,
+20,Sandwiches,Paneer Paprika Sandwich,₹240,,,TRUE,
+21,Burgers,Aloo Tikki Burger with Salted Fries,₹180,,,,
+21,Burgers,Vegetable Burger with Peri Peri Fries,₹200,,,,
+21,Burgers,Cheese Burst Burger with Parmesan Truffle Fries,₹220,,,,
+21,Burgers,Chef's Cottage Cheese Burger with Peri Peri Fries,₹240,,,,
+21,Burgers,9:50 Signature Burger with Potato Wedges,₹250,,TRUE,,Our very own specialty indulgence loaded with surprising rich flavours!
+22,Pasta,Spaghetti Aglio E Olio,₹300,,,,"A golden swirl of garlic-kissed spaghetti with olives, cherry tomatoes, and Parmesan."
+22,Pasta,Fettuccine Basil Pesto,₹340,,,,Silky fettuccine draped in vibrant pesto sauce with olives and basil.
+22,Pasta,Penne Arrabbiata,₹320,,,,"Fiery, tangy penne tossed with peppers and olives."
+22,Pasta,Fettuccine Creamy Mushroom,₹360,,,TRUE,A lush mushroom-cream-coated fettuccine crowned with Parmesan.
+22,Pasta,Traditional Lasagna,₹380,,,,"Layers of tender pasta, rich in house sauce, seasonal vegetables, and mozzarella baked to golden perfection. "
+22,Pasta,Three Cheese Ravioli,₹390,chiefs choice,,,"Ricotta, bocconcini, and Parmesan folded into delicate pasta pillows, served with silky mix sauce."
+22,Pasta,Exotic Pink Penne,₹350,Trending ,,,
+22,Pasta,9:50 Mac & Cheese,₹370,,TRUE,,
+23,Pizza Station,Classic Margherita Pizza (NY Style),₹400,,,,"Mozzarella, bocconcini, and fresh basil."
+23,Pizza Station,Classic Margherita Pizza (Neapolitan),₹450,,,,"Mozzarella, bocconcini, and fresh basil."
+23,Pizza Station,Cheese Corn Pizza (NY Style),₹400,,,,Creamy mozzarella and sweet corn.
+23,Pizza Station,Cheese Corn Pizza (Neapolitan),₹450,,,,Creamy mozzarella and sweet corn.
+23,Pizza Station,Farmville Pizza (NY Style),₹480,,,,"Garden medley of broccoli, corn, bell pepper, olives, jalapeño, cherry tomato."
+23,Pizza Station,Farmville Pizza (Neapolitan),₹530,,,,"Garden medley of broccoli, corn, bell pepper, olives, jalapeño, cherry tomato."
+23,Pizza Station,Four Cheese Pizza (NY Style),₹450,,,TRUE,"Mozzarella, bocconcini, cheddar, and ricotta with Parmesan."
+23,Pizza Station,Four Cheese Pizza (Neapolitan),₹500,,,TRUE,"Mozzarella, bocconcini, cheddar, and ricotta with Parmesan."
+23,Pizza Station,Exotic Pizza (NY Style),₹460,,,,"Corn, bell peppers, black olives, and mushroom."
+23,Pizza Station,Exotic Pizza (Neapolitan),₹510,,,,"Corn, bell peppers, black olives, and mushroom."
+23,Pizza Station,Paneer Tikka Pizza (NY Style),₹470,,,,"Spiced paneer, bell pepper, onion, paprika, jalapeño on tikka sauce."
+23,Pizza Station,Paneer Tikka Pizza (Neapolitan),₹520,,,,"Spiced paneer, bell pepper, onion, paprika, jalapeño on tikka sauce."
+23,Pizza Station,Pestomania Pizza (NY Style),₹440,,,,Bocconcini over vibrant pesto sauce.
+23,Pizza Station,Pestomania Pizza (Neapolitan),₹490,,,,Bocconcini over vibrant pesto sauce.
+23,Pizza Station,Love in the Forest Pizza (NY Style),₹500,trending,,,"Garlic cream base with paprika, mushrooms, baby burrata, and pesto swirl."
+23,Pizza Station,Love in the Forest Pizza (Neapolitan),₹550,trending,,,"Garlic cream base with paprika, mushrooms, baby burrata, and pesto swirl."
+23,Pizza Station,9:50 Signature Pizza (NY Style),₹490,,TRUE,,"Garlic cream base, mozzarella, bocconcini, red paprika, jalapeño, black olives, pickle onion, fried garlic."
+23,Pizza Station,9:50 Signature Pizza (Neapolitan),₹540,,TRUE,,"Garlic cream base, mozzarella, bocconcini, red paprika, jalapeño, black olives, pickle onion, fried garlic."
+24,Garlic Bread,Classic Garlic Bread,₹240,,,,"Stuffed with butter and garlic, brushed with olive oil and served with love. "
+24,Garlic Bread,Chilly Cheese Garlic Bread,₹250,,,TRUE,"Stuffed with green chilies and melted mozzarella, this one is everyone's favourite. "
+24,Garlic Bread,9:50 Signature Garlic Bread,₹300,,TRUE,,"Schezwan-spiced garlic sauce, bell pepper, cherry tomato..."
+25,Calzone,Veg Calzone,₹320,,,,"Garlic-sauced veggies, mushrooms, mozzarella, oregano and parsley on top. "
+25,Calzone,Pesto Mushroom Calzone,₹340,,,TRUE,"Pesto, mushrooms, cherry tomato, lettuce, and bocconcini with pesto dip."
+25,Calzone,Creamy Paneer Calzone,₹360,,,,"Paneer, bell pepper, sweet corn, olives, cherry tomato with sweet chili sauce."
+26,Meal Bowls,Burnt Garlic Fried Rice,₹250,,,,
+26,Meal Bowls,Schezwan Fried Rice,₹250,,,,
+26,Meal Bowls,Burrito Rice Bowl,₹350,,,TRUE,"Rice, beans, veggies, salsa and all about satisfying flavours."
+26,Meal Bowls,Peri Peri Paneer Rice Bowl,₹340,,,,
+26,Meal Bowls,Buddha Bowl,₹380,,,,
+26,Meal Bowls,9:50 Signature Meal Bowl,₹350,,TRUE,,Your comforting pizza flavours but in a rice bowl.
+27,Ramen Tales,Tan Tan Ramen,₹280,,,,Tantalising ramen immersed in rich tangy broth topped with peanuts and spring onion 
+27,Ramen Tales,Shoyu Ramen,₹320,,,TRUE,"Spicy soy-based broth with mushrooms, fresh greens, and tender noodles, finished with panner slices on top."
+28,Meal Combos,Pav Bhaji,₹200,,,,
+28,Meal Combos,Butter Khichdi,₹220,,,,
+28,Meal Combos,Chole Chawal / Rajma Chawal,₹220,,,,
+28,Meal Combos,Sev Tamatar with Laccha Paratha,₹250,,,,
+28,Meal Combos,Paneer Bhurji with Pav,₹250,,,,
+29,Desserts,Mango Cheesecake,₹280,,,,
+29,Desserts,Blueberry Tiramisu,₹280,trending,,,
+29,Desserts,Classic Homemade Brownie,₹220,,,,
+29,Desserts,Nutella Waffle,₹240,,,,
+29,Desserts,Biscoff Waffle,₹240,,,,
+29,Desserts,Oreo Waffle,₹240,,,,
+29,Desserts,Sizzling Brownie,₹260,,,,
+29,Desserts,Classic Tiramisu,₹250,,,TRUE,
+29,Desserts,Blueberry Cheese Cake,₹250,,,,
+29,Desserts,Lotus Biscoff Cheese Cake,₹250,,,,
+29,Desserts,Nutella Cheese Cake,₹250,,,,
+29,Desserts,Strawberry Cheese Cake,₹250,,,TRUE,
+29,Desserts,Red Velvet Tiramisu,₹280,,,TRUE,
+,,,,,,,

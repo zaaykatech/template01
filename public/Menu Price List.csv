@@ -1,0 +1,279 @@
+Category,Item Name,Price
+Beverage Companions,Classic Butter Toast,200
+Fries Corner,Extra Peri Peri Masala,20
+Extras,Olive Oil,50
+Healthy Salads,Greek Salad,280
+Healthy Salads,Classic Caesar Salad,250
+Healthy Salads,Yogurt Salad,300
+Healthy Salads,Sprout Salad,160
+Healthy Salads,Peri Peri Paneer Salad,320
+Bites For Sides,Nachos With Salsa,200
+Bites For Sides,Overloaded Nachos,220
+Bites For Sides,Cherry Tomato & Cottage Cheese Bruschetta,250
+Bites For Sides,Pesto Cottage Cheese In Focaccia Bread,320
+Fries Corner,Simply Salted Fries,160
+Fries Corner,Peri Peri Fries,210
+Fries Corner,Parmesan Truffle Fries,230
+Fries Corner,Cheese Garlic Fries,220
+Fries Corner,Potato Wedges,220
+Sandwiches,Cheese Corn Sandwich,210
+Sandwiches,Bombay Sandwich,0
+Sandwiches,Bombay Sandwich (kaccha),170
+Sandwiches,Bombay Sandwich (grilled),190
+Sandwiches,Cheese Chutney Sandwich,200
+Sandwiches,Veg Grilled Sandwich,220
+Sandwiches,Paneer Paprica Sandwich,240
+Burgers,Chef's Cottage Cheese Burger With Peri Peri Fries,240
+Burgers,Aloo Tikki Burger With Salted Fries,180
+Burgers,Cheese Burst Burger With Parmesan Truffle Fries,220
+Burgers,Vegetable Burger With Peri Peri Fries,200
+Burgers,9:50 Signature Burger With Potato Wedges,250
+Pasta,9:50 Mac & Cheese,370
+Pasta,Spaghetti Aglio E Olio,300
+Pasta,Fettuccine Basil Pesto,340
+Pasta,Penne Arrabbiata,320
+Pasta,Fettuccine Creamy Mushroom,360
+Garlic Bread,Classic Garlic Bread,240
+Garlic Bread,Chilly Cheese Garlic Bread,250
+Garlic Bread,9:50 Signature Garlic Bread,300
+Calzone,Veg Calzone,320
+Calzone,Creamy Paneer Calzone,360
+Calzone,Pesto Mushroom Calzone,340
+Meal Bowls,Peri Peri Paneer Rice Bowl,340
+Meal Bowls,Schezwan Fried Rice,250
+Meal Bowls,Burrito Rice Bowl,350
+Meal Bowls,Burnt Garlic Fried Rice,250
+Meal Bowls,9:50 Signature Meal Bowl,350
+Meal Combos,Paneer Bhurji With Pav,250
+Meal Combos,Sev Tamatar With Laccha Paratha,250
+Meal Combos,Chole Chawal / Rajma Chawal,0
+Meal Combos,Chole Chawal / Rajma Chawal (chole chawal),220
+Meal Combos,Chole Chawal / Rajma Chawal (rajma chawal),220
+Meal Combos,Pav Bhaji,200
+Meal Combos,Butter Khichdi,220
+Desserts,Classic Homemade Brownie,220
+Desserts,Sizzling Brownie,260
+Classic Espresso Bar,Espresso,0
+Classic Espresso Bar,Espresso (hot),100
+Classic Espresso Bar,Espresso (iced),100
+Classic Espresso Bar,Americano,0
+Classic Espresso Bar,Americano (hot),140
+Classic Espresso Bar,Americano (iced),140
+Classic Espresso Bar,Cappuccino,0
+Classic Espresso Bar,Cappuccino (hot),160
+Classic Espresso Bar,Cappuccino (iced),160
+Classic Espresso Bar,Latte,0
+Classic Espresso Bar,Latte (hot),170
+Classic Espresso Bar,Latte (iced),170
+Classic Espresso Bar,Cortado,0
+Classic Espresso Bar,Cortado (hot),190
+Classic Espresso Bar,Cortado (iced),190
+Classic Espresso Bar,Flat White,0
+Classic Espresso Bar,Flat White (hot),200
+Classic Espresso Bar,Flat White (iced),200
+Classic Espresso Bar,Mocha,0
+Classic Espresso Bar,Mocha (hot),220
+Classic Espresso Bar,Mocha (iced),220
+Craft Coffees,Saffron Turmeric Latte,0
+Craft Coffees,Saffron Turmeric Latte (hot),250
+Craft Coffees,Saffron Turmeric Latte (iced),250
+Craft Coffees,Hazelnut Cappuccino,0
+Craft Coffees,Hazelnut Cappuccino (hot),220
+Craft Coffees,Hazelnut Cappuccino (iced),220
+Craft Coffees,Tiramisu Cappuccino,0
+Craft Coffees,Tiramisu Cappuccino (hot),260
+Craft Coffees,Tiramisu Cappuccino (iced),260
+Craft Coffees,Lotus Biscoff Latte,0
+Craft Coffees,Lotus Biscoff Latte (hot),250
+Craft Coffees,Lotus Biscoff Latte (iced),250
+Craft Coffees,French Vanilla Cappuccino,0
+Craft Coffees,French Vanilla Cappuccino (hot),210
+Craft Coffees,French Vanilla Cappuccino (iced),210
+Craft Coffees,Irish Cappuccino,0
+Craft Coffees,Irish Cappuccino (hot),220
+Craft Coffees,Irish Cappuccino (iced),220
+Craft Coffees,Dark Chocolate Mocha,0
+Craft Coffees,Dark Chocolate Mocha (hot),240
+Craft Coffees,Dark Chocolate Mocha (iced),240
+Craft Coffees,Caramel Latte,0
+Craft Coffees,Caramel Latte (hot),230
+Craft Coffees,Caramel Latte (iced),230
+Craft Coffees,Classic Iced Coffee,250
+Craft Coffees,Vietnamese Iced Coffee,260
+Frappe To Go,9:50 Signature Frappe,220
+Frappe To Go,Hazelnut Frappe,230
+Frappe To Go,Tiramisu Frappe,260
+Frappe To Go,Biscoff Frappe,250
+Frappe To Go,Irish Frappe,230
+Frappe To Go,Brownie Frappe,250
+Frappe To Go,Java Chip Frappe,250
+Frappe To Go,Toffee Caramel Frappe,230
+Brewed Coffees,9:50 Signature Cold Brew,270
+Brewed Coffees,Classic Espresso Tonic (E&T),220
+Brewed Coffees,Pomegranate Cold Brew,230
+Brewed Coffees,Orange Cold Brew,230
+Brewed Coffees,Whisky Cold Brew,280
+Brewed Coffees,Ginger Ale Cold Brew,220
+Brewed Coffees,Pineapple Cold Brew,230
+Affogato,9:50 Signature Affogato,250
+Affogato,Classic Affogato,220
+Affogato,Caramel Pistachio Affogato,240
+Affogato,Dark Chocolate Affogato,240
+Matcha,Hot Matcha,220
+Matcha,Iced Matcha,220
+Matcha,Matcha Frappe,230
+Matcha,Mango Matcha Latte,250
+Matcha,Strawberry Matcha Latte,250
+Matcha,Coconut Matcha Latte,260
+Hot Teas,Classic Masala Chai,0
+Hot Teas,Classic Masala Chai (GINGER TEA),80
+Hot Teas,Classic Masala Chai (ELAICHI TEA),80
+Hot Teas,Lemon Ginger Tea,140
+Hot Teas,Moroccan Mint Tea,150
+Hot Teas,Lavender Earl Grey Tea,180
+Iced Teas,Lemon Iced Tea,160
+Iced Teas,Peach Iced Tea,180
+Iced Teas,Irish Iced Tea,190
+Iced Teas,Hibiscus Iced Tea,220
+Hot Chocolate,Classic Hot Chocolate,210
+Hot Chocolate,Nutella Hot Chocolate,250
+Hot Chocolate,Spiced Hot Chocolate,230
+Milk Shakes,Belgian Chocolate Shake,260
+Milk Shakes,Oreo Shake,220
+Milk Shakes,Ferrero Rocher Shake,250
+Milk Shakes,Kitkat Shake,220
+Milk Shakes,Strawberry Shake,230
+Milk Shakes,Brownie Shake,260
+Milk Shakes,French Vanilla Shake,240
+Milk Shakes,Lotus Biscoff Shake,270
+Milk Shakes,Blueberry Cheesecake Shake,300
+Milk Shakes,Nutella Shake,270
+Craft Mocktails,Shirley Temple,220
+Craft Mocktails,Cinderella,230
+Craft Mocktails,Coffee Lemonade,220
+Craft Mocktails,Masala Lemonade,190
+Craft Mocktails,Virgin Mojito,180
+Craft Mocktails,Watermelon Mojito,200
+Healthy Juices,Abc,250
+Healthy Juices,Detox,160
+Healthy Juices,Carrot Ginger Juice,180
+Healthy Juices,Watermelon Mint Juice,200
+Smoothies,9:50 Signature Smoothie,350
+Smoothies,Mango Madness,280
+Smoothies,Nutty Buddy,310
+Smoothies,Berry Powerful,300
+Beverage Companions,Brookie,130
+Beverage Companions,Croissant,0
+Beverage Companions,Croissant (butter),160
+Beverage Companions,Croissant (nutella),220
+Extras,Water Bottle,20
+Meal Bowls,Curry Bowl,270
+Meal Combos,Extra Pav,40
+Meal Combos,Extra Laccha Parantha,50
+Pasta,Shoyu Ramen,320
+Pasta,Tan Tan Ramen,280
+Classic Espresso Bar,Extra Shot,60
+Blue Dream,Butterfly Pea Latte,180
+Blue Dream,Blue Pea Sparkler,240
+Blue Dream,Blue Pea Coconut Cooler,270
+Blue Dream,Blue Pea Matcha Smoothie,300
+Blue Dream,2 Hour Projecter,1000
+Pasta,Pasta Customisation,50
+Craft Mocktails,Passionate Love,240
+Milk Shakes,Custard Apple Shake,250
+Iced Teas,Hibiscus Strawberry Iced Tea,250
+Hot Chocolate,Tiramisu Hot Chocolate,270
+Bites For Sides,Onion Rings,220
+Bites For Sides,Sourdough Mushroom Melt With Pesto Sauce,350
+Pasta,Three Cheese Ravioli,390
+Pasta,Traditional Lasagna,380
+Beverage Companions,Red Velvet Cookie,150
+Healthy Salads,Buddha Bowl,380
+Beverage Companions,Classic Avocado Toast,250
+Smoothies,Avocado Coconut,340
+Milk Shakes,Tropical Avocado Shake,320
+Meal Combos,Dal Tadka,200
+Meal Combos,Extra Bhaji,120
+Healthy Salads,Green Salad,150
+Classic Espresso Bar,Machiato,200
+Pasta,Extra Cheese,40
+Healthy Salads,Salad Customisation,40
+Blue Dream,Blue Pea Iced Latte,200
+Craft Mocktails,Pomegranate Mint Cooler,300
+Matcha,Lavender Love Matcha,260
+Craft Coffees,Red Velvet Mocha,250
+Sandwiches,Paneer Tikka In Focaccia Bread,340
+Pizza Station,Love In The Forest,0
+Pizza Station,Love In The Forest (NEO),550
+Pizza Station,Love In The Forest (NYS),500
+Pasta,Exotic Pink Penne,350
+Extras,Parcel,20
+Classic Espresso Bar,Tonic Water With Double Espresso,250
+Frappe To Go,Extra Chocolate,60
+Milk Shakes,Coffee Cheesecake Shake,300
+Healthy Juices,Abo,250
+Fries Corner,Extra Dip,40
+Craft Mocktails,Mango Chilli Cooler,280
+Craft Mocktails,Strawberry Espresso Tonic,260
+Milk Shakes,Rose Pistachio Shake,340
+Matcha,Caramel Matcha Latte,270
+Iced Teas,Green Apple Iced Tea,200
+Craft Mocktails,Raspberry Lemonade,250
+Brewed Coffees,Fizzy Coconut Cold Brew,260
+Extras,Honey,40
+Desserts,Bento Cheese Cake,1200
+Beverage Companions,Pesto Ricotta Toast,300
+Extras,Ginger Ale,110
+Craft Mocktails,Honey Coconut Espresso,280
+Extras,Add On,30
+Iced Teas,Earl Grey Ice Tea,250
+Open Item,Open Item,0
+Desserts,Waffle,0
+Desserts,Waffle (Belgian),240
+Desserts,Waffle (nutella),240
+Desserts,Waffle (oreo),240
+Desserts,Tiramisu,0
+Desserts,Tiramisu (Classic Tiramisu),250
+Desserts,Tiramisu (Blueberry Tiramisu),280
+Desserts,Tiramisu (Red Velvet Tiramisu),280
+Desserts,Cheese Cake,0
+Desserts,Cheese Cake (Blueberry Cheese Cake),250
+Desserts,Cheese Cake (Lotus Biscoff Cheese Cake),250
+Desserts,Cheese Cake (Nutella Cheese Cake),250
+Desserts,Cheese Cake (Strawberry Cheese Cake),250
+Desserts,Cheese Cake (Mango Cheese Cake),280
+Milk Shakes,Red Velvet  Shake,300
+Pizza Station,Nine Fifty Signature,0
+Pizza Station,Nine Fifty Signature (NYS),490
+Pizza Station,Nine Fifty Signature (NEO),540
+Pizza Station,Farmville,0
+Pizza Station,Farmville (NYS),480
+Pizza Station,Farmville (NEO),530
+Pizza Station,Exotic,0
+Pizza Station,Exotic (NYS),460
+Pizza Station,Exotic (NEO),510
+Pizza Station,Classic Margarita,0
+Pizza Station,Classic Margarita (NYS),400
+Pizza Station,Classic Margarita (NEO),450
+Pizza Station,Four Cheese,0
+Pizza Station,Four Cheese (NYS),450
+Pizza Station,Four Cheese (NEO),500
+Pizza Station,Panner Tikka,0
+Pizza Station,Panner Tikka (NYS),470
+Pizza Station,Panner Tikka (NEO),520
+Pizza Station,Pestomania,0
+Pizza Station,Pestomania (NYS),440
+Pizza Station,Pestomania (NEO),490
+Pizza Station,Cheese Corn,0
+Pizza Station,Cheese Corn (NYS),400
+Pizza Station,Cheese Corn (NEO),450
+Craft Coffees,Honey Cinnamon Latte,270
+Brewed Coffees,Cranberry Cold Brew,250
+Craft Mocktails,Breeze,280
+Craft Mocktails,Daydream,300
+Milk Shakes,Caramel Hazelnut Shake,320
+Pasta,Caramelised Onion & Garlic Spaghetti,370
+Calzone,Jalapeno & Corn Calzone,350
+Bites For Sides,Sourdough Four Cheese Toast,340
+Craft Mocktails,Green Apple Espresso Spritz,260
+Pizza Station,Pizza Customisation,50

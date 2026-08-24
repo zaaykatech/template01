@@ -1,0 +1,12 @@
+[
+  { "name": "ABO (Apple, Beetroot and Orange) Juice", "price": 200, "customTag": "Barista's Choice" },
+  { "name": "Green Apple Iced Tea", "price": 200 },
+  { "name": "Raspberry Lemonade", "price": 230 },
+  { "name": "Caramel Matcha Latte", "price": 250 },
+  { "name": "Strawberry Espresso Tonic", "price": 260, "customTag": "Barista's Choice" },
+  { "name": "Fizzy Coconut Cold Brew", "price": 260 },
+  { "name": "Mango Chilli Cooler", "price": 280 },
+  { "name": "Rose Pistachio Shake", "price": 320, "customTag": "trending" },
+  { "name": "Mango Cheesecake", "price": 280 },
+  { "name": "Blueberry Tiramisu", "price": 280, "customTag": "trending" }
+]
