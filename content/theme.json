@@ -1,7 +1,17 @@
 {
-  "id": "warm-artisan",
+  "spacing": {
+    "xs": "0.5rem",
+    "sm": "1rem",
+    "md": "1.5rem",
+    "lg": "2rem",
+    "xl": "3rem"
+  },
+  "logoUrl": "/uploads/1000337914.png",
   "name": "Warm Artisan",
-  "description": "Warm cream tones with handcrafted terracotta accents.",
+  "typography": {
+    "heading": "playfair",
+    "body": "inter"
+  },
   "colors": {
     "background": "#F5EBDD",
     "surface": "#FFF8ED",
@@ -12,10 +22,6 @@
     "muted": "#A99584",
     "border": "#E2CDB8"
   },
-  "typography": {
-    "heading": "playfair",
-    "body": "inter"
-  },
   "radius": {
     "small": "0.375rem",
     "medium": "0.75rem",
@@ -25,18 +31,13 @@
     "card": "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
     "floating": "0 10px 25px -5px rgba(0, 0, 0, 0.1)"
   },
-  "spacing": {
-    "xs": "0.5rem",
-    "sm": "1rem",
-    "md": "1.5rem",
-    "lg": "2rem",
-    "xl": "3rem"
-  },
   "components": {
-    "cardStyle": "soft",
+    "cardStyle": "glass",
     "buttonStyle": "pill",
     "categoryStyle": "pill",
     "headingStyle": "serif",
     "imageStyle": "organic"
-  }
+  },
+  "id": "warm-artisan",
+  "description": "Warm cream tones with handcrafted terracotta accents."
 }
