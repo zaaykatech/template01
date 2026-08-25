@@ -22,6 +22,7 @@ collections:
           - name: "categories"
             label: "Categories"
             widget: "list"
+            summary: '{{fields.title}}'
             fields:
               - {name: "id", label: "Category ID", widget: "string"}
               - {name: "title", label: "Category Title", widget: "string"}
@@ -31,6 +32,7 @@ collections:
               - name: "items"
                 label: "Items"
                 widget: "list"
+                summary: '{{fields.name}} - {{fields.price}}'
                 fields:
                   - {name: "available", label: "Available", widget: "boolean", default: true}
                   - {name: "name", label: "Item Name", widget: "string"}

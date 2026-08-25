@@ -8,6 +8,7 @@ export default function RootPage() {
   // Transform prices to include the currency symbol like the original MenuClient did
   const sections = (menuData.categories || []).filter(cat => cat.visible !== false).map(cat => ({
     ...cat,
+    title: cat.title ? cat.title.toLowerCase() : '',
     items: (cat.items || []).filter(item => item.available !== false).map(item => ({
       ...item,
       price: item.price ? `₹${item.price}` : undefined
