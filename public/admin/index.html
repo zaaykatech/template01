@@ -131,6 +131,19 @@
           padding: 40px !important;
         }
       }
+      /* Rename "Check for preview" to "Get back to menu website" */
+      a[href*="preview"], a[title="Check for preview"] {
+        font-size: 0 !important;
+      }
+      a[href*="preview"]::after, a[title="Check for preview"]::after {
+        content: "Get back to menu website";
+        font-size: 14px !important;
+        display: inline-block;
+        visibility: visible;
+        color: #3b82f6;
+        font-weight: 500;
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
@@ -141,7 +154,8 @@
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on('open', () => {
           setTimeout(() => {
-            const iframe = document.getElementById('netlify-identity-widget');
+            // Find the actual iframe inside the widget div
+            const iframe = document.querySelector('#netlify-identity-widget iframe');
             if (iframe && iframe.contentDocument) {
               const style = iframe.contentDocument.createElement('style');
               style.innerHTML = `
@@ -153,7 +167,7 @@
               `;
               iframe.contentDocument.head.appendChild(style);
             }
-          }, 50); // slight delay to ensure iframe DOM is ready
+          }, 100); // slight delay to ensure iframe DOM is ready
         });
       }
     </script>
