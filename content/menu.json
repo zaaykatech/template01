@@ -1,4 +1,341 @@
 {
-  "categories": [],
-  "bulk_upload_csv": "/uploads/menu.xlsx"
+  "categories": [
+    {
+      "id": "category-1",
+      "title": "Category 1",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 1",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-2",
+      "title": "Category 2",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 2",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-3",
+      "title": "Category 3",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 3",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-4",
+      "title": "Category 4",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 4",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-5",
+      "title": "Category 5",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 5",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-6",
+      "title": "Category 6",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 6",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-7",
+      "title": "Category 7",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 7",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-8",
+      "title": "Category 8",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 8",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-9",
+      "title": "Category 9",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 9",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-10",
+      "title": "Category 10",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 10",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-11",
+      "title": "Category 11",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 11",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-12",
+      "title": "Category 12",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 12",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-13",
+      "title": "Category 13",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 13",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-14",
+      "title": "Category 14",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 14",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-15",
+      "title": "Category 15",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 15",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-16",
+      "title": "Category 16",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 16",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-17",
+      "title": "Category 17",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 17",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-18",
+      "title": "Category 18",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 18",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-19",
+      "title": "Category 19",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 19",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-20",
+      "title": "Category 20",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 20",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-21",
+      "title": "Category 21",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 21",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-22",
+      "title": "Category 22",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 22",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-23",
+      "title": "Category 23",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 23",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "category-24",
+      "title": "Category 24",
+      "visible": true,
+      "items": [
+        {
+          "name": "Item 24",
+          "description": "",
+          "price": "",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    }
+  ],
+  "bulk_upload_csv": ""
 }
