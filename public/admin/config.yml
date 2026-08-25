@@ -6,6 +6,9 @@ local_backend: true
 media_folder: "public/uploads"
 public_folder: "/uploads"
 
+editor:
+  preview: false
+
 collections:
   - name: "menu"
     label: "Menu"
