@@ -79,5 +79,6 @@
         }
       ]
     }
-  ]
+  ],
+  "bulk_upload_csv": "/uploads/menu.xlsx"
 }
