@@ -60,7 +60,7 @@ collections:
             label: "Hero Video Upload"
             widget: "file"
             required: false
-            hint: "Upload a short video. Please only change this 2-3 times a year to save storage space."
+            hint: "Please upload an MP4 video UNDER 5MB to save server space. Only change this twice or thrice a year."
           - {name: "instagramUrl", label: "Instagram URL", widget: "string", required: false}
           - {name: "mobileNumber", label: "Mobile Number", widget: "string", required: false}
           - {name: "address", label: "Address", widget: "text", required: false}
