@@ -15,8 +15,8 @@ collections:
         label: "Restaurant Menu"
         fields:
           - name: "bulk_upload_csv"
-            label: "Bulk Upload Menu (CSV)"
-            hint: "Upload a CSV to completely replace the menu below. Columns: Category, Item, Description, Price, Available, Chef's Choice. Click Publish, wait 15 seconds, and refresh the page to see the items."
+            label: "Bulk Upload Menu (Excel/CSV)"
+            hint: "Upload an Excel (.xlsx) or CSV file to completely replace the menu below. Columns: Category, Item, Description, Price, Available, Chef's Choice. Click Publish, wait 15 seconds, and refresh the page to see the items."
             widget: "file"
             required: false
           - name: "categories"

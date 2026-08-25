@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const Papa = require('papaparse');
+const XLSX = require('xlsx');
 
 const menuPath = path.join(__dirname, '../content/menu.json');
 
@@ -15,42 +16,62 @@ try {
 }
 
 if (!menuData.bulk_upload_csv) {
-  console.log('No bulk upload CSV found in menu.json. Exiting gracefully.');
+  console.log('No bulk upload file found in menu.json. Exiting gracefully.');
   process.exit(0);
 }
 
-// The path in decap CMS is typically something like /uploads/menu.csv
-// But it maps to public/uploads/menu.csv in the repo.
-const csvRelPath = menuData.bulk_upload_csv.startsWith('/') 
+const fileRelPath = menuData.bulk_upload_csv.startsWith('/') 
   ? menuData.bulk_upload_csv.substring(1) 
   : menuData.bulk_upload_csv;
   
-const csvAbsPath = path.join(__dirname, '..', 'public', csvRelPath);
+const fileAbsPath = path.join(__dirname, '..', 'public', fileRelPath);
 
-if (!fs.existsSync(csvAbsPath)) {
-  console.error(`CSV file not found at ${csvAbsPath}`);
+if (!fs.existsSync(fileAbsPath)) {
+  console.error(`File not found at ${fileAbsPath}`);
   process.exit(1);
 }
 
-const csvRaw = fs.readFileSync(csvAbsPath, 'utf8');
+let parsedData = [];
 
-const parsed = Papa.parse(csvRaw, {
-  header: true,
-  skipEmptyLines: true,
-  transformHeader: function(h) {
-    // Normalize header: trim, lowercase, remove spaces and special characters
-    return h.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+// Determine file type based on extension
+if (fileAbsPath.toLowerCase().endsWith('.xlsx') || fileAbsPath.toLowerCase().endsWith('.xls')) {
+  console.log('Processing as Excel file...');
+  const workbook = XLSX.readFile(fileAbsPath);
+  const firstSheetName = workbook.SheetNames[0];
+  const worksheet = workbook.Sheets[firstSheetName];
+  // Parse to JSON (array of objects)
+  const rawData = XLSX.utils.sheet_to_json(worksheet, { defval: "" });
+  
+  // Normalize headers (keys)
+  parsedData = rawData.map(row => {
+    const normalizedRow = {};
+    for (const [key, value] of Object.entries(row)) {
+      const normalKey = key.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+      normalizedRow[normalKey] = value;
+    }
+    return normalizedRow;
+  });
+} else {
+  console.log('Processing as CSV file...');
+  const csvRaw = fs.readFileSync(fileAbsPath, 'utf8');
+  const parsed = Papa.parse(csvRaw, {
+    header: true,
+    skipEmptyLines: true,
+    transformHeader: function(h) {
+      // Normalize header: trim, lowercase, remove spaces and special characters
+      return h.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+    }
+  });
+  if (parsed.errors.length) {
+    console.error('CSV Parsing errors:', parsed.errors);
   }
-});
-
-if (parsed.errors.length) {
-  console.error('CSV Parsing errors:', parsed.errors);
+  parsedData = parsed.data;
 }
 
 // Map of category title -> category object
 const categoriesMap = new Map();
 
-parsed.data.forEach((row, index) => {
+parsedData.forEach((row, index) => {
   // Try to find the required columns gracefully
   const categoryTitle = row['category'] || row['categoryname'] || row['section'] || `Category ${index + 1}`;
   const itemName = row['item'] || row['itemname'] || row['name'] || row['title'] || `Item ${index + 1}`;
@@ -92,4 +113,4 @@ menuData.bulk_upload_csv = ""; // clear it so it doesn't run again
 // Write back to menu.json
 fs.writeFileSync(menuPath, JSON.stringify(menuData, null, 2), 'utf8');
 
-console.log('Successfully processed CSV and updated menu.json');
+console.log('Successfully processed uploaded file and updated menu.json');
