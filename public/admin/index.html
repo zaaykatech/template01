@@ -22,5 +22,26 @@
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // Netlify Identity widget renders inside an iframe. We must inject CSS directly into the iframe to hide the watermark.
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('open', () => {
+          setTimeout(() => {
+            const iframe = document.getElementById('netlify-identity-widget');
+            if (iframe && iframe.contentDocument) {
+              const style = iframe.contentDocument.createElement('style');
+              style.innerHTML = `
+                .netlify-identity-footer, 
+                a.netlify-identity-logo,
+                a[href*="netlify.com"] { 
+                  display: none !important; 
+                }
+              `;
+              iframe.contentDocument.head.appendChild(style);
+            }
+          }, 50); // slight delay to ensure iframe DOM is ready
+        });
+      }
+    </script>
   </body>
 </html>
