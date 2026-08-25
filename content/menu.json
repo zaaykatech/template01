@@ -61,6 +61,23 @@
           "available": true
         }
       ]
+    },
+    {
+      "visible": true,
+      "id": "paneer",
+      "title": "paneer",
+      "items": [
+        {
+          "isMostOrdered": true,
+          "isSignature": false,
+          "isMonsoon": false,
+          "_isSquareMobile": false,
+          "_isForcedRectangular": false,
+          "available": true,
+          "name": "butter paneer",
+          "price": "300"
+        }
+      ]
     }
   ]
 }
