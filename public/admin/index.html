@@ -7,6 +7,8 @@
     <!-- Include the script that enables Netlify Identity on this page. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
       /* Hide Decap CMS watermark */
       a[href^="https://decapcms.org/"],
       a[href^="https://www.netlify.com/"] {
@@ -16,6 +18,58 @@
       .netlify-identity-menu .netlify-identity-footer,
       #netlify-identity-widget a[href*="netlify"] {
         display: none !important;
+      }
+      
+      /* --- Premium Modern Light Theme --- */
+      body, #nc-root {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+        background-color: #f8fafc !important;
+      }
+
+      /* Typography */
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 600 !important;
+        color: #0f172a !important;
+      }
+
+      /* Soften all box shadows and round all corners to make it look like a modern dashboard */
+      div[style*="box-shadow"], 
+      div[class*="Card"], 
+      div[class*="Panel"] {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03) !important;
+        border-radius: 12px !important;
+        border: 1px solid #e2e8f0 !important;
+      }
+
+      /* Premium Inputs */
+      input, select, textarea {
+        font-family: 'Inter', sans-serif !important;
+        border-radius: 8px !important;
+        border: 1px solid #cbd5e1 !important;
+        transition: border-color 0.2s, box-shadow 0.2s !important;
+      }
+      input:focus, select:focus, textarea:focus {
+        border-color: #3b82f6 !important;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+        outline: none !important;
+      }
+
+      /* Premium Buttons */
+      button {
+        font-family: 'Inter', sans-serif !important;
+        border-radius: 8px !important;
+        font-weight: 500 !important;
+        transition: all 0.2s ease !important;
+      }
+      button:hover {
+        transform: translateY(-1px) !important;
+      }
+
+      /* Top App Header styling */
+      header[class*="AppHeader"] {
+        background-color: #ffffff !important;
+        border-bottom: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
       }
     </style>
   </head>
