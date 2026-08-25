@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import { MenuItem as MenuItemType, MenuSection } from '@/types';
 import { applyTheme } from '@/lib/themes/themeUtils';
@@ -594,16 +594,23 @@ export default function MenuClient({
 }) {
     const [sections] = useState<MenuSection[]>(initialSections);
     const [theme] = useState<ThemeConfig>(initialTheme);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-    
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
+
+    const filteredSections = useMemo(() => {
+        if (!searchQuery) return sections;
+        return sections.map(section => ({
+            ...section,
+            items: section.items.filter(item => 
+                item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                (item.description && item.description.toLowerCase().includes(searchQuery.toLowerCase()))
+            )
+        })).filter(section => section.items.length > 0);
+    }, [sections, searchQuery]);
+
     const [showBackToTop, setShowBackToTop] = useState(false);
     const [activeSection, setActiveSection] = useState<string>('');
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navRef = useRef<HTMLUListElement>(null);
-    const navLinks = sections;
 
     useEffect(() => {
         if (theme) {
@@ -689,22 +696,6 @@ export default function MenuClient({
         }
     }, [activeSection]);
 
-    if (loading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-[#f5e6d3]">
-                <div className="text-primary animate-pulse font-script text-3xl">Loading Menu...</div>
-            </div>
-        );
-    }
-
-    if (error || !sections.length) {
-        return (
-            <div className="min-h-screen flex items-center justify-center bg-[#f5e6d3]">
-                <div className="text-primary font-script text-3xl">{error || 'Menu not found'}</div>
-            </div>
-        );
-    }
-
     return (
         <div style={theme ? {
             '--primary': theme.primaryColor,
@@ -752,12 +743,6 @@ export default function MenuClient({
                         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     >
                         <iconify-icon icon={isMenuOpen ? "solar:close-circle-linear" : "solar:hamburger-menu-linear"} width="20"></iconify-icon>
-                    </button>
-                    <button
-                        onClick={() => setIsSearchOpen(true)}
-                        className="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center hover:bg-primary hover:text-background transition-colors reveal active duration-500 delay-100"
-                    >
-                        <iconify-icon icon="solar:magnifer-linear" width="20"></iconify-icon>
                     </button>
 
                     {/* Dropdown Menu Overlay */}
@@ -825,127 +810,44 @@ export default function MenuClient({
                 </div>
             </header>
 
-            {isSearchOpen && (
-                <div className="fixed inset-0 z-[100] bg-secondary px-6 py-8 animate-in fade-in slide-in-from-top duration-300">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="flex-1 relative">
-                                <iconify-icon icon="solar:magnifer-linear" className="absolute left-4 top-1/2 -translate-y-1/2 text-text/70"></iconify-icon>
-                                <input
-                                    autoFocus
-                                    type="text"
-                                    placeholder="Search for coffee, pizza, desserts..."
-                                    className="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 pl-12 pr-4 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
-                            </div>
-                            <button
-                                onClick={() => {
-                                    setIsSearchOpen(false);
-                                    setSearchQuery('');
-                                }}
-                                className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition-colors"
-                            >
-                                <iconify-icon icon="solar:close-circle-linear" width="24"></iconify-icon>
-                            </button>
-                        </div>
-
-                        <div className="overflow-y-auto max-h-[calc(100vh-180px)] no-scrollbar pb-20">
-                            {searchQuery ? (
-                                <div className="space-y-8">
-                                    {sections.map(section => {
-                                        const filteredItems = section.items.filter(item =>
-                                            item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                            item.description?.toLowerCase().includes(searchQuery.toLowerCase())
-                                        );
-
-                                        if (filteredItems.length === 0) return null;
-
-                                        return (
-                                            <div key={section.id}>
-                                                <h3 className="font-script text-2xl text-primary mb-4 flex items-center gap-3">
-                                                    {section.title}
-                                                    <span className="h-px flex-1 bg-gray-100"></span>
-                                                </h3>
-                                                {(() => {
-                                                    const { CardComponent, gridCols } = getSectionConfig(section.id);
-                                                    return (
-                                                        <div className={`grid ${gridCols} gap-3`}>
-                                                            {filteredItems.map(item => (
-                                                                <CardComponent key={item.name} item={item} />
-                                                            ))}
-                                                        </div>
-                                                    );
-                                                })()}
-                                            </div>
-                                        )
-                                    })}
-                                    {sections.every(section =>
-                                        !section.items.some(item =>
-                                            item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                            item.description?.toLowerCase().includes(searchQuery.toLowerCase())
-                                        )
-                                    ) && (
-                                            <div className="text-center py-20">
-                                                <iconify-icon icon="solar:map-point-remove-linear" width="48" className="text-gray-200 mb-4"></iconify-icon>
-                                                <p className="text-text/70 font-sans">No items matched your search.</p>
-                                            </div>
-                                        )}
-                                </div>
-                            ) : (
-                                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                                    {[
-                                        { name: 'Drinks', section: 'cold-brews' },
-                                        { name: 'Shakes', section: 'shakes' },
-                                        { name: 'Food', section: 'bites-for-sides' },
-                                        { name: 'Sandwich', section: 'sandwiches' },
-                                        { name: 'Burger', section: 'burgers' },
-                                        { name: 'Pasta', section: 'pasta' },
-                                        { name: 'Pizza', section: 'pizza' },
-                                        { name: 'Meal Combo', section: 'meal-combos' },
-                                        { name: 'Desserts', section: 'dessert' }
-                                    ].map(category => (
-                                        <button
-                                            key={category.name}
-                                            onClick={() => {
-                                                setIsSearchOpen(false);
-                                                setSearchQuery('');
-                                                const element = document.getElementById(category.section);
-                                                if (element) {
-                                                    const headerOffset = 100;
-                                                    const elementPosition = element.getBoundingClientRect().top;
-                                                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                                                    window.scrollTo({
-                                                        top: offsetPosition,
-                                                        behavior: 'smooth'
-                                                    });
-                                                }
-                                            }}
-                                            className="p-4 rounded-2xl bg-gray-100/50 border border-gray-100 text-center hover:bg-primary/5 hover:border-primary/20 transition-all group"
-                                        >
-                                            <p className="font-sans text-xs font-semibold text-primary group-hover:text-primary transition-colors">{category.name}</p>
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
-                    </div>
+            {/* Inline Search Bar */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-4 reveal active">
+                <div className="relative max-w-md mx-auto">
+                    <iconify-icon icon="solar:magnifer-linear" className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/50" width="20"></iconify-icon>
+                    <input
+                        type="text"
+                        placeholder="Search for coffee, pizza, desserts..."
+                        className="w-full bg-secondary/50 border border-primary/10 rounded-full py-3 pl-12 pr-4 font-sans text-sm text-primary placeholder-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-sm"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                    />
+                    {searchQuery && (
+                        <button
+                            onClick={() => setSearchQuery('')}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-primary/50 hover:text-primary transition-colors"
+                        >
+                            <iconify-icon icon="solar:close-circle-linear" width="20"></iconify-icon>
+                        </button>
+                    )}
                 </div>
-            )}
+            </div>
 
-            <nav className="sticky top-0 z-40 glass-nav border-b border-primary/10 mb-6 sm:mb-8">
+            <nav className="sticky top-0 z-40 glass-nav border-b border-primary/10 mb-6 sm:mb-8 transition-all duration-300 transform mt-0 translate-y-0 relative">
                 <div className="max-w-7xl mx-auto px-2 sm:px-4">
-                    <ul ref={navRef} className="flex gap-2 sm:gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory py-3 sm:py-4 px-1">
-                        {navLinks.map((section) => {
+                    <ul ref={navRef} className="flex gap-2 sm:gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory py-3 sm:py-4 px-1 items-center">
+                        {filteredSections.map((section) => {
+                            // Don't show garlic bread or calzone in the top nav as they are under pizza
+                            if (section.id === 'garlic-bread' || section.id === 'calzone') return null;
+
                             const isActive = activeSection === section.id;
+
                             return (
-                                <li key={section.id} className="snap-start" data-section={section.id}>
+                                <li key={section.id} className="snap-start shrink-0" data-section={section.id}>
                                     <a
                                         href={`#${section.id}`}
                                         className={`whitespace-nowrap px-5 sm:px-8 py-3 sm:py-4 rounded-full font-sans text-sm sm:text-base font-semibold transition-all duration-300 active:scale-95 flex items-center justify-center min-w-[100px] sm:min-w-[120px] ${isActive
-                                            ? 'bg-primary text-background shadow-lg shadow-primary/30 scale-105'
-                                            : 'bg-[#fffefb] border border-primary/15 text-primary hover:bg-primary/5'
+                                                ? 'bg-primary text-background shadow-lg shadow-primary/30 scale-105'
+                                                : 'bg-[#fffefb] border border-primary/15 text-primary hover:bg-primary/5'
                                             }`}
                                     >
                                         {section.title}
@@ -959,12 +861,18 @@ export default function MenuClient({
 
             <main className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-12">
 
+                {filteredSections.length === 0 && (
+                    <div className="text-center py-20">
+                        <iconify-icon icon="solar:map-point-remove-linear" width="48" className="text-primary/50 mb-4"></iconify-icon>
+                        <p className="text-primary/70 font-sans">No items matched your search.</p>
+                    </div>
+                )}
 
-                {sections.map((section, index) => {
+                {filteredSections.map((section, index) => {
                     // Group pizza, garlic-bread, and calzone together
                     if (section.id === 'pizza') {
-                        const garlicBreadSection = sections.find(s => s.id === 'garlic-bread');
-                        const calzoneSection = sections.find(s => s.id === 'calzone');
+                        const garlicBreadSection = filteredSections.find(s => s.id === 'garlic-bread');
+                        const calzoneSection = filteredSections.find(s => s.id === 'calzone');
 
                         return (
                             <section key={section.id} id="pizza" className="reveal -mx-4 sm:-mx-6 px-4 sm:px-6 py-8 bg-gradient-to-br from-[#f5e6d3] via-background to-[#ede0d0] rounded-2xl border border-primary/10 shadow-sm">
