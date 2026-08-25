@@ -1,4 +1,579 @@
 {
-  "categories": [],
-  "bulk_upload_csv": "/uploads/menu.xlsx"
+  "categories": [
+    {
+      "id": "combo",
+      "title": "COMBO",
+      "visible": true,
+      "items": [
+        {
+          "name": "THE BIG BITES COMBO",
+          "description": "1 Pizza Paneer Shawarma + 1 Smokey Paneer Shawarma + 1 Chipotle Cheese Paneer Shawarma + 1 Peri Peri Masala Fries + 1 Salted Mix Herb Fries + 3 Choice Dips + 4 Goli Sodas",
+          "price": "649",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "DUO DELIGHT COMBO",
+          "description": "1 Pizza Paneer Shawarma + 1 Smokey Paneer Shawarma + 1 Peri Peri Masala Fries + 2 Flavorful Dips + 2 Goli Sodas",
+          "price": "399",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "PANEER PIZZA COMBO",
+          "description": "6-inch Pizza Paneer Shawarma + Spicy Peri Peri Masala Fries + 2 Dips + 1 Goli Soda",
+          "price": "299",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "SMOKEY DELIGHT COMBO",
+          "description": "1 Smokey Paneer Shawarma + Salted & Mix Herb Fries + 2 Killer Dips + 1 Goli Soda",
+          "price": "249",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "signature-shawarmas",
+      "title": "SIGNATURE SHAWARMAS",
+      "visible": true,
+      "items": [
+        {
+          "name": "Traditional Paneer",
+          "description": "",
+          "price": "99",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Smokey Paneer Shawarma",
+          "description": "",
+          "price": "119",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Salsa Cheese Shawarma",
+          "description": "",
+          "price": "119",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Honey Mustard Cheese",
+          "description": "",
+          "price": "119",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Sweet Onion Cheese",
+          "description": "",
+          "price": "119",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Kadhai Paneer Cheese",
+          "description": "",
+          "price": "119",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "BBQ Mint Shawarma",
+          "description": "",
+          "price": "119",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "South West Chipotle Cheese",
+          "description": "",
+          "price": "129",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Makhani Paneer Cheese",
+          "description": "",
+          "price": "139",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Royal Paneer Shawarma",
+          "description": "",
+          "price": "149",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Paneer Tikka Shawarma",
+          "description": "",
+          "price": "159",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Zinger Paneer Shawarma",
+          "description": "",
+          "price": "169",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "mini-shawarma-for-trial",
+      "title": "MINI SHAWARMA FOR TRIAL",
+      "visible": true,
+      "items": [
+        {
+          "name": "Traditional Paneer Mini Shawarma",
+          "description": "",
+          "price": "59",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Smokey Paneer Mini Shawarma",
+          "description": "",
+          "price": "79",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Salsa Cheese Mini Shawarma",
+          "description": "",
+          "price": "79",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Honey Mustard Cheese Mini Shawarma",
+          "description": "",
+          "price": "79",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Sweet Onion Cheese Mini Shawarma",
+          "description": "",
+          "price": "79",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "South West Chipotle Cheese Mini Shawarma",
+          "description": "",
+          "price": "89",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "BBQ Mint Mini Shawarma",
+          "description": "",
+          "price": "89",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Kadhai Paneer Cheese Mini Shawarma",
+          "description": "",
+          "price": "89",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Makhani Paneer Cheese Mini Shawarma",
+          "description": "",
+          "price": "89",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Royal Paneer Mini Shawarma",
+          "description": "",
+          "price": "99",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Paneer Tikka Mini Shawarma",
+          "description": "",
+          "price": "119",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Zinger Paneer Mini Shawarma",
+          "description": "",
+          "price": "129",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "jumbo-shawarma-8-inch-",
+      "title": "JUMBO SHAWARMA (8 INCH)",
+      "visible": true,
+      "items": [
+        {
+          "name": "Traditional Paneer Jumbo Shawarma",
+          "description": "",
+          "price": "129",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Smokey Paneer Jumbo Shawarma",
+          "description": "",
+          "price": "149",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Salsa Cheese Jumbo Shawarma",
+          "description": "",
+          "price": "149",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Honey Mustard Cheese Jumbo Shawarma",
+          "description": "",
+          "price": "149",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Sweet Onion Cheese Jumbo Shawarma",
+          "description": "",
+          "price": "149",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "South West Chipotle Cheese Jumbo Shawarma",
+          "description": "",
+          "price": "159",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "BBQ Mint Jumbo Shawarma",
+          "description": "",
+          "price": "159",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Kadhai Paneer Cheese Jumbo Shawarma",
+          "description": "",
+          "price": "159",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Makhani Paneer Cheese Jumbo Shawarma",
+          "description": "",
+          "price": "169",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Royal Paneer Jumbo Shawarma",
+          "description": "",
+          "price": "179",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Paneer Tikka Jumbo Shawarma",
+          "description": "",
+          "price": "189",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Zinger Paneer Jumbo Shawarma",
+          "description": "",
+          "price": "199",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "pizza-paneer",
+      "title": "PIZZA PANEER",
+      "visible": true,
+      "items": [
+        {
+          "name": "Paneer Pizza Shawarma",
+          "description": "",
+          "price": "139",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Paneer Pizza Capsicum",
+          "description": "",
+          "price": "149",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Pizza Paneer Corn",
+          "description": "",
+          "price": "159",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Pizza Paneer Onion",
+          "description": "",
+          "price": "159",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Pizza Paneer Capsicum",
+          "description": "",
+          "price": "159",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Makes'D Special Pizza (Best Seller)",
+          "description": "",
+          "price": "169",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "fries",
+      "title": "FRIES",
+      "visible": true,
+      "items": [
+        {
+          "name": "Salted Fries",
+          "description": "",
+          "price": "69",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Peri Peri Fries",
+          "description": "",
+          "price": "79",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Makes'D Special Funkey Fries (Best Seller)",
+          "description": "",
+          "price": "119",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "healthy-salads",
+      "title": "HEALTHY SALADS",
+      "visible": true,
+      "items": [
+        {
+          "name": "Protein Paneer Salad",
+          "description": "",
+          "price": "179",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "something-extra-for-extra-maze",
+      "title": "SOMETHING EXTRA FOR EXTRA MAZE",
+      "visible": true,
+      "items": [
+        {
+          "name": "Extra Hot Spicy Garlic for extra spicy",
+          "description": "",
+          "price": "15",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Extra Paneer for extra maze",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Extra Cheese for extra cheesy",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "bread-options",
+      "title": "BREAD OPTIONS",
+      "visible": true,
+      "items": [
+        {
+          "name": "Classic Pita Bread",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Tortilla Wrap",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Brown Bread",
+          "description": "",
+          "price": "30",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Laccha Paratha",
+          "description": "",
+          "price": "40",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other",
+      "visible": true,
+      "items": [
+        {
+          "name": "Goli soda ",
+          "description": "",
+          "price": "30",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Diet soda ",
+          "description": "",
+          "price": "40",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Water bottle 500 ml ",
+          "description": "",
+          "price": "10",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Water bottle 1000 ml ",
+          "description": "",
+          "price": "20",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "byob",
+      "title": "BYOB",
+      "visible": true,
+      "items": [
+        {
+          "name": "Bring Your own bag ",
+          "description": "",
+          "price": "149",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Bring Your own big bag",
+          "description": "",
+          "price": "199",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    },
+    {
+      "id": "dips",
+      "title": "Dips",
+      "visible": true,
+      "items": [
+        {
+          "name": "Tandoori dip",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Mayo dip",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Thousound dip",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Spicy garlic dip ",
+          "description": "",
+          "price": "30",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Thousound dip",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Liquid cheese dip ",
+          "description": "",
+          "price": "25",
+          "available": true,
+          "isSignature": false
+        },
+        {
+          "name": "Tpmato ketchup ",
+          "description": "",
+          "price": "20",
+          "available": true,
+          "isSignature": false
+        }
+      ]
+    }
+  ],
+  "bulk_upload_csv": ""
 }
