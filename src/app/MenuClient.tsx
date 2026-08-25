@@ -893,25 +893,14 @@ export default function MenuClient({
                                             </div>
                                         )}
                                 </div>
-                            ) : (
                                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                                    {[
-                                        { name: 'Drinks', section: 'cold-brews' },
-                                        { name: 'Shakes', section: 'shakes' },
-                                        { name: 'Food', section: 'bites-for-sides' },
-                                        { name: 'Sandwich', section: 'sandwiches' },
-                                        { name: 'Burger', section: 'burgers' },
-                                        { name: 'Pasta', section: 'pasta' },
-                                        { name: 'Pizza', section: 'pizza' },
-                                        { name: 'Meal Combo', section: 'meal-combos' },
-                                        { name: 'Desserts', section: 'dessert' }
-                                    ].map(category => (
+                                    {sections.map(section => (
                                         <button
-                                            key={category.name}
+                                            key={section.id}
                                             onClick={() => {
                                                 setIsSearchOpen(false);
                                                 setSearchQuery('');
-                                                const element = document.getElementById(category.section);
+                                                const element = document.getElementById(section.id);
                                                 if (element) {
                                                     const headerOffset = 100;
                                                     const elementPosition = element.getBoundingClientRect().top;
@@ -922,9 +911,9 @@ export default function MenuClient({
                                                     });
                                                 }
                                             }}
-                                            className="p-4 rounded-2xl bg-gray-100/50 border border-gray-100 text-center hover:bg-primary/5 hover:border-primary/20 transition-all group"
+                                            className="p-4 rounded-xl bg-secondary/50 border border-primary/10 text-center hover:shadow-md hover:-translate-y-1 hover:bg-secondary transition-all duration-300 group flex items-center justify-center h-full"
                                         >
-                                            <p className="font-sans text-xs font-semibold text-primary group-hover:text-primary transition-colors">{category.name}</p>
+                                            <p className="font-sans text-sm font-semibold text-primary group-hover:text-primary transition-colors">{section.title}</p>
                                         </button>
                                     ))}
                                 </div>
