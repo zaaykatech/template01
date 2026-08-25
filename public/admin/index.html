@@ -6,6 +6,18 @@
     <title>Content Manager</title>
     <!-- Include the script that enables Netlify Identity on this page. -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+      /* Hide Decap CMS watermark */
+      a[href^="https://decapcms.org/"],
+      a[href^="https://www.netlify.com/"] {
+        display: none !important;
+      }
+      /* Hide Netlify Identity Widget watermark */
+      .netlify-identity-menu .netlify-identity-footer,
+      #netlify-identity-widget a[href*="netlify"] {
+        display: none !important;
+      }
+    </style>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
