@@ -56,7 +56,11 @@ collections:
           - {name: "description", label: "Description", widget: "string"}
           - {name: "logoUrl", label: "Logo Image", widget: "image", required: false}
           - {name: "showHeroVideo", label: "Show Hero Video", widget: "boolean", default: true, required: false}
-          - {name: "heroVideoUrl", label: "Hero Video URL", widget: "string", required: false}
+          - name: "heroVideoUrl"
+            label: "Hero Video Upload"
+            widget: "file"
+            required: false
+            hint: "Upload a short video. Please only change this 2-3 times a year to save storage space."
           - {name: "instagramUrl", label: "Instagram URL", widget: "string", required: false}
           - {name: "mobileNumber", label: "Mobile Number", widget: "string", required: false}
           - {name: "address", label: "Address", widget: "text", required: false}
