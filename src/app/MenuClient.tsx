@@ -818,6 +818,21 @@ export default function MenuClient({
                                             <p className="font-sans text-[10px] text-primary/60">Google Reviews</p>
                                         </div>
                                     </a>
+
+                                    <a
+                                        href="/admin"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-3 p-3 rounded-xl hover:bg-primary/10 transition-colors group border border-transparent hover:border-primary/20"
+                                    >
+                                        <div className="w-10 h-10 rounded-full bg-primary/10 group-hover:bg-primary flex items-center justify-center flex-shrink-0 transition-colors">
+                                            <iconify-icon icon="solar:user-bold-duotone" width="20" className="text-primary group-hover:text-background transition-colors"></iconify-icon>
+                                        </div>
+                                        <div className="flex-1">
+                                            <p className="font-sans text-sm font-semibold text-primary transition-colors">Admin Panel</p>
+                                            <p className="font-sans text-[10px] text-primary/60">Manage your menu</p>
+                                        </div>
+                                    </a>
                                 </nav>
                             </div>
                         </>
@@ -826,7 +841,7 @@ export default function MenuClient({
             </header>
 
             {isSearchOpen && (
-                <div className="fixed inset-0 z-[100] bg-secondary px-6 py-8 animate-in fade-in slide-in-from-top duration-300">
+                <div className="fixed inset-0 z-[110] bg-secondary px-6 py-8 animate-in fade-in slide-in-from-top duration-300">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex items-center gap-4 mb-8">
                             <div className="flex-1 relative">
