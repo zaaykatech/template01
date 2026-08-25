@@ -1,0 +1,43 @@
+name: Process CSV Menu Upload
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/menu.json'
+
+permissions:
+  contents: write
+
+jobs:
+  process-csv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Process CSV
+        run: node scripts/process-csv.js
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+          
+      - name: Commit and push if changed
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add content/menu.json
+          git commit -m "Auto-populated menu from CSV upload"
+          git push
