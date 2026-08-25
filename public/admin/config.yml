@@ -55,6 +55,7 @@ collections:
           - {name: "name", label: "Theme Name", widget: "select", options: ["Warm Artisan", "Dark Coffee Luxury", "Botanical", "Minimal Editorial", "Terracotta Mediterranean", "Midnight Blue", "Cream & Orange", "Soft Blush", "Forest & Gold", "Custom"]}
           - {name: "description", label: "Description", widget: "string"}
           - {name: "logoUrl", label: "Logo Image", widget: "image", required: false}
+          - {name: "showHeroVideo", label: "Show Hero Video", widget: "boolean", default: true, required: false}
           - {name: "heroVideoUrl", label: "Hero Video URL", widget: "string", required: false}
           - {name: "instagramUrl", label: "Instagram URL", widget: "string", required: false}
           - {name: "mobileNumber", label: "Mobile Number", widget: "string", required: false}

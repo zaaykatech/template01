@@ -712,25 +712,27 @@ export default function MenuClient({
             '--font-main': theme.fontFamily
         } as React.CSSProperties : {}}>
             {/* Hero Section */}
-            <div className="w-full h-[80dvh] md:h-[70vh] rounded-b-[2.5rem] overflow-hidden relative">
-                <video 
-                    src={theme?.heroVideoUrl || "/hero.mp4"}
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    className="w-full h-full object-cover absolute inset-0"
-                />
-                
-                {/* Subtle bottom gradient for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                
-                {/* Scroll Down Indicator */}
-                <div className="absolute bottom-6 left-0 right-0 flex flex-col items-center justify-center gap-2 z-10 text-background/90 drop-shadow-md pointer-events-none">
-                    <span className="font-sans text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase animate-pulse">Scroll Down</span>
-                    <iconify-icon icon="solar:round-alt-arrow-down-linear" width="24" className="animate-bounce"></iconify-icon>
+            {theme?.showHeroVideo !== false && (
+                <div className="w-full h-[80dvh] md:h-[70vh] rounded-b-[2.5rem] overflow-hidden relative">
+                    <video 
+                        src={theme?.heroVideoUrl || "/hero.mp4"}
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline 
+                        className="w-full h-full object-cover absolute inset-0"
+                    />
+                    
+                    {/* Subtle bottom gradient for text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+                    
+                    {/* Scroll Down Indicator */}
+                    <div className="absolute bottom-6 left-0 right-0 flex flex-col items-center justify-center gap-2 z-10 text-background/90 drop-shadow-md pointer-events-none">
+                        <span className="font-sans text-[10px] sm:text-xs font-semibold tracking-[0.2em] uppercase animate-pulse">Scroll Down</span>
+                        <iconify-icon icon="solar:round-alt-arrow-down-linear" width="24" className="animate-bounce"></iconify-icon>
+                    </div>
                 </div>
-            </div>
+            )}
 
             <header className="pt-6 sm:pt-8 pb-4 px-4 sm:px-6 flex justify-between items-center max-w-7xl mx-auto">
                 <div className="flex items-center gap-2 reveal active">
