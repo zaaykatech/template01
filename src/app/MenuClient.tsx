@@ -6,7 +6,7 @@ import { applyTheme } from '@/lib/themes/themeUtils';
 import { ThemeConfig } from '@/lib/themes/themeTypes';
 
 const MenuItemCard = ({ item }: { item: MenuItemType }) => {
-    if (item.isMonsoon) return <MonsoonEditCard item={item} withRain={true} />;
+
 
     if (item.isSignature) {
         return (
@@ -35,7 +35,7 @@ const MenuItemCard = ({ item }: { item: MenuItemType }) => {
 };
 
 const CraftMenuItemCard = ({ item }: { item: MenuItemType }) => {
-    if (item.isMonsoon) return <MonsoonEditCard item={item} withRain={true} />;
+
 
     return (
         <div className={`group bg-secondary p-3 sm:p-4 rounded-xl shadow-sm border border-primary/5 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full ${item._isForcedRectangular ? 'col-span-2 md:col-span-1' : ''}`}>
@@ -179,17 +179,10 @@ const PizzaItemCard = ({ item }: { item: MenuItemType }) => {
                     {item.description && <p className="text-[10px] text-background/80 mb-4 leading-relaxed">{item.description}</p>}
                 </div>
                 <div className="mt-auto pt-2">
-                    {item.prices ? (
-                        <div className="flex gap-2">
-                            <span className="flex-1 text-center text-[10px] border border-white/30 rounded py-1 text-background">NEW YORK: {item.prices.ny}</span>
-                            <span className="flex-1 text-center text-[10px] bg-secondary/25 rounded py-1 text-background font-bold">NEAPOLITAN: {item.prices.neap}</span>
+                    {item.price && (
+                        <div className="flex justify-end">
+                            <div className="flex justify-end md:items-center"><span className="text-sm font-bold bg-secondary/25 text-background px-3 py-1 rounded-full whitespace-nowrap">{item.price}</span></div>
                         </div>
-                    ) : (
-                        item.price && (
-                            <div className="flex justify-end">
-                                <div className="flex justify-end md:items-center"><span className="text-sm font-bold bg-secondary/25 text-background px-3 py-1 rounded-full whitespace-nowrap">{item.price}</span></div>
-                            </div>
-                        )
                     )}
                 </div>
             </div>
@@ -211,17 +204,10 @@ const PizzaItemCard = ({ item }: { item: MenuItemType }) => {
                 {item.description && <p className="text-[10px] text-text/70 mb-4 leading-relaxed">{item.description}</p>}
             </div>
             <div className="mt-auto pt-2">
-                {item.prices ? (
-                    <div className="flex gap-2">
-                        <span className="flex-1 text-center text-[10px] border border-primary/20 rounded py-1 text-primary">NEW YORK: {item.prices.ny}</span>
-                        <span className="flex-1 text-center text-[10px] bg-primary/10 rounded py-1 text-primary font-medium">NEAPOLITAN: {item.prices.neap}</span>
+                {item.price && (
+                    <div className="flex justify-end">
+                        <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">{item.price}</span>
                     </div>
-                ) : (
-                    item.price && (
-                        <div className="flex justify-end">
-                            <span className="text-xs font-semibold text-primary bg-primary/10 px-2 py-0.5 rounded-full">{item.price}</span>
-                        </div>
-                    )
                 )}
             </div>
         </div>
@@ -229,7 +215,7 @@ const PizzaItemCard = ({ item }: { item: MenuItemType }) => {
 };
 
 const BitesItemCard = ({ item }: { item: MenuItemType }) => {
-    if (item.isMonsoon) return <MonsoonEditCard item={item} withRain={true} />;
+
 
     if (item.isSignature) {
         return (
@@ -258,7 +244,7 @@ const BitesItemCard = ({ item }: { item: MenuItemType }) => {
 };
 
 const ShakeItemCard = ({ item }: { item: MenuItemType }) => {
-    if (item.isMonsoon) return <MonsoonEditCard item={item} withRain={true} />;
+
 
     if (item.isSignature) {
         return (
@@ -287,7 +273,7 @@ const ShakeItemCard = ({ item }: { item: MenuItemType }) => {
 };
 
 const DessertItemCard = ({ item }: { item: MenuItemType }) => {
-    if (item.isMonsoon) return <MonsoonEditCard item={item} withRain={true} />;
+
 
     if (item.isSignature) {
         return (

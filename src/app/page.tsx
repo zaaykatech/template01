@@ -10,8 +10,7 @@ export default function RootPage() {
     ...cat,
     items: (cat.items || []).filter(item => item.available !== false).map(item => ({
       ...item,
-      price: item.price ? `₹${item.price}` : undefined,
-      prices: item.prices ? { ny: `₹${item.prices.ny}`, neap: `₹${item.prices.neap}` } : undefined
+      price: item.price ? `₹${item.price}` : undefined
     }))
   }));
 

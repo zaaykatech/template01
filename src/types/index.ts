@@ -1,15 +1,10 @@
 export type MenuItem = {
   name: string;
-  price?: number | string;
-  prices?: {
-    ny: number;
-    neap: number;
-  };
+  price: number | string;
   description?: string;
   isMostOrdered?: boolean;
   isSignature?: boolean;
   customTag?: string;
-  isMonsoon?: boolean;
   _isSquareMobile?: boolean;
   _isForcedRectangular?: boolean;
 };
