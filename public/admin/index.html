@@ -118,13 +118,17 @@
 
       /* Desktop View Adjustments */
       @media (min-width: 1024px) {
-        /* Constrain the max-width of the editor for better readability */
+        /* Let the container take full width so there's no blank space on the right */
         div[class*="EditorContainer"] {
-          max-width: 1000px !important;
-          margin: 0 auto !important;
-          border-left: 1px solid #e2e8f0 !important;
-          border-right: 1px solid #e2e8f0 !important;
+          max-width: 100% !important;
           background: #ffffff !important;
+          border-left: 1px solid #e2e8f0 !important;
+        }
+        /* Center the actual form controls for readability */
+        div[class*="ControlPane"] {
+          max-width: 900px !important;
+          margin: 0 auto !important;
+          padding: 40px !important;
         }
       }
     </style>
