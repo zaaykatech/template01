@@ -2,7 +2,7 @@
   "categories": [
     {
       "id": "combo",
-      "title": "COMBO",
+      "title": "combo",
       "visible": true,
       "items": [
         {
@@ -37,7 +37,7 @@
     },
     {
       "id": "signature-shawarmas",
-      "title": "SIGNATURE SHAWARMAS",
+      "title": "signature-shawarmas",
       "visible": true,
       "items": [
         {
@@ -128,7 +128,7 @@
     },
     {
       "id": "mini-shawarma-for-trial",
-      "title": "MINI SHAWARMA FOR TRIAL",
+      "title": "mini-shawarma-for-trial",
       "visible": true,
       "items": [
         {
@@ -219,7 +219,7 @@
     },
     {
       "id": "jumbo-shawarma-8-inch-",
-      "title": "JUMBO SHAWARMA (8 INCH)",
+      "title": "jumbo-shawarma-8-inch-",
       "visible": true,
       "items": [
         {
@@ -310,7 +310,7 @@
     },
     {
       "id": "pizza-paneer",
-      "title": "PIZZA PANEER",
+      "title": "pizza-paneer",
       "visible": true,
       "items": [
         {
@@ -359,7 +359,7 @@
     },
     {
       "id": "fries",
-      "title": "FRIES",
+      "title": "fries",
       "visible": true,
       "items": [
         {
@@ -387,7 +387,7 @@
     },
     {
       "id": "healthy-salads",
-      "title": "HEALTHY SALADS",
+      "title": "healthy-salads",
       "visible": true,
       "items": [
         {
@@ -401,7 +401,7 @@
     },
     {
       "id": "something-extra-for-extra-maze",
-      "title": "SOMETHING EXTRA FOR EXTRA MAZE",
+      "title": "something-extra-for-extra-maze",
       "visible": true,
       "items": [
         {
@@ -429,7 +429,7 @@
     },
     {
       "id": "bread-options",
-      "title": "BREAD OPTIONS",
+      "title": "bread-options",
       "visible": true,
       "items": [
         {
