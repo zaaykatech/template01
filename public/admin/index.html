@@ -131,43 +131,34 @@
           padding: 40px !important;
         }
       }
-      /* Rename "Check for preview" to "Get back to menu website" */
-      a[href*="preview"], a[title="Check for preview"] {
-        font-size: 0 !important;
-      }
-      a[href*="preview"]::after, a[title="Check for preview"]::after {
-        content: "Get back to menu website";
-        font-size: 14px !important;
-        display: inline-block;
-        visibility: visible;
-        color: #3b82f6;
-        font-weight: 500;
-        text-decoration: underline;
-      }
     </style>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
-      // Netlify Identity widget renders inside an iframe. We must inject CSS directly into the iframe to hide the watermark.
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on('open', () => {
-          setTimeout(() => {
-            // Find the actual iframe inside the widget div
-            const iframe = document.querySelector('#netlify-identity-widget iframe');
-            if (iframe && iframe.contentDocument) {
+          let attempts = 0;
+          const interval = setInterval(() => {
+            attempts++;
+            const iframe = document.getElementById('netlify-identity-widget');
+            if (iframe && iframe.contentDocument && iframe.contentDocument.head) {
               const style = iframe.contentDocument.createElement('style');
               style.innerHTML = `
                 .netlify-identity-footer, 
                 a.netlify-identity-logo,
                 a[href*="netlify.com"] { 
                   display: none !important; 
+                  opacity: 0 !important;
+                  visibility: hidden !important;
                 }
               `;
               iframe.contentDocument.head.appendChild(style);
+              clearInterval(interval);
             }
-          }, 100); // slight delay to ensure iframe DOM is ready
+            if (attempts > 50) clearInterval(interval); // Give up after 5 seconds
+          }, 100);
         });
       }
     </script>
