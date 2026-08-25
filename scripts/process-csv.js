@@ -37,6 +37,10 @@ const csvRaw = fs.readFileSync(csvAbsPath, 'utf8');
 const parsed = Papa.parse(csvRaw, {
   header: true,
   skipEmptyLines: true,
+  transformHeader: function(h) {
+    // Normalize header: trim, lowercase, remove spaces and special characters
+    return h.trim().toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
 });
 
 if (parsed.errors.length) {
@@ -48,16 +52,16 @@ const categoriesMap = new Map();
 
 parsed.data.forEach((row, index) => {
   // Try to find the required columns gracefully
-  const categoryTitle = row['Category'] || row['category'] || `Category ${index}`;
-  const itemName = row['Item'] || row['Item Name'] || row['name'] || `Item ${index}`;
-  const description = row['Description'] || row['description'] || '';
-  const price = String(row['Price'] || row['price'] || '');
+  const categoryTitle = row['category'] || row['categoryname'] || row['section'] || `Category ${index + 1}`;
+  const itemName = row['item'] || row['itemname'] || row['name'] || row['title'] || `Item ${index + 1}`;
+  const description = row['description'] || row['desc'] || row['details'] || '';
+  const price = String(row['price'] || row['cost'] || row['amount'] || '');
   
   // Booleans
-  const availableStr = String(row['Available'] || row['available'] || 'true').toLowerCase();
+  const availableStr = String(row['available'] || row['instock'] || 'true').toLowerCase();
   const available = availableStr === 'true' || availableStr === 'yes' || availableStr === '1';
   
-  const chefsChoiceStr = String(row['Chef\'s Choice'] || row['Chefs Choice'] || row['isSignature'] || 'false').toLowerCase();
+  const chefsChoiceStr = String(row['chefschoice'] || row['signature'] || row['ispopular'] || 'false').toLowerCase();
   const isSignature = chefsChoiceStr === 'true' || chefsChoiceStr === 'yes' || chefsChoiceStr === '1';
 
   if (!categoriesMap.has(categoryTitle)) {
