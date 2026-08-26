@@ -6,10 +6,10 @@
     "lg": "2rem",
     "xl": "3rem"
   },
-  "showHeroVideo": false,
+  "showHeroVideo": true,
   "logoUrl": "/uploads/1000337914.png",
-  "name": "Midnight Blue",
-  "heroVideoUrl": "https://www.instagram.com/reel/DcTQMyXJm09/?utm_source=ig_web_copy_link&igsi=MzRlODBiNWFlZA==",
+  "name": "Warm Artisan",
+  "heroVideoUrl": "/uploads/video-19084.mp4",
   "typography": {
     "heading": "playfair",
     "body": "inter"
