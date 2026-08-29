@@ -926,11 +926,23 @@ export default function MenuClient({
                                 </div>
                             )
                         ) : (
-                            <div className="text-center py-20 text-primary/40 flex flex-col items-center">
-                                <div className="w-20 h-20 bg-secondary/30 rounded-full flex items-center justify-center mb-4">
-                                    <iconify-icon icon="solar:magnifer-linear" width="40"></iconify-icon>
+                            <div className="py-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                                <div className="text-center mb-8">
+                                    <iconify-icon icon="solar:magic-stick-3-linear" width="32" className="text-primary/40 mb-3"></iconify-icon>
+                                    <h3 className="font-playfair text-xl sm:text-2xl text-primary font-bold">What are you craving today?</h3>
+                                    <p className="font-sans text-sm text-primary/60 mt-2">Browse our categories or type above to search</p>
                                 </div>
-                                <p className="font-sans text-lg font-medium">What are you craving today?</p>
+                                <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-4xl mx-auto">
+                                    {sections.map(section => (
+                                        <button
+                                            key={`category-${section.id}`}
+                                            onClick={() => setSearchQuery(section.title)}
+                                            className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-secondary/30 border border-primary/15 text-primary font-sans text-sm sm:text-base font-medium hover:bg-primary hover:text-background hover:shadow-md hover:scale-105 transition-all duration-300"
+                                        >
+                                            {section.title}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         )}
                     </div>
