@@ -592,8 +592,8 @@ export default function MenuClient({
     initialSections: MenuSection[], 
     initialTheme: ThemeConfig 
 }) {
-    const [sections] = useState<MenuSection[]>(initialSections);
-    const [theme] = useState<ThemeConfig>(initialTheme);
+    const sections = initialSections;
+    const theme = initialTheme;
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     

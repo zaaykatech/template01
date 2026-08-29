@@ -1,6 +1,8 @@
 import { getMenu, getTheme } from '@/lib/cmsService';
 import MenuClient from './MenuClient';
 
+export const dynamic = 'force-dynamic';
+
 export default function RootPage() {
   const menuData = getMenu();
   const theme = getTheme();
