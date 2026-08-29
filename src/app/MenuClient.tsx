@@ -934,13 +934,17 @@ export default function MenuClient({
                                 </div>
                                 <div className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-4xl mx-auto">
                                     {sections.map(section => (
-                                        <button
+                                        <a
                                             key={`category-${section.id}`}
-                                            onClick={() => setSearchQuery(section.title)}
-                                            className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-secondary/30 border border-primary/15 text-primary font-sans text-sm sm:text-base font-medium hover:bg-primary hover:text-background hover:shadow-md hover:scale-105 transition-all duration-300"
+                                            href={`#${section.id}`}
+                                            onClick={() => {
+                                                setIsSearchOpen(false);
+                                                setSearchQuery('');
+                                            }}
+                                            className="block px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-secondary/30 border border-primary/15 text-primary font-sans text-sm sm:text-base font-medium hover:bg-primary hover:text-background hover:shadow-md hover:scale-105 transition-all duration-300"
                                         >
                                             {section.title}
-                                        </button>
+                                        </a>
                                     ))}
                                 </div>
                             </div>
