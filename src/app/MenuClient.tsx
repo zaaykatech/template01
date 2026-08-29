@@ -714,7 +714,7 @@ export default function MenuClient({
         })).filter(section => section.items.length > 0)
         : sections;
 
-    const navLinks = displayedSections;
+    const navLinks = sections;
 
     return (
         <div style={theme ? {
@@ -852,26 +852,87 @@ export default function MenuClient({
             </header>
 
             {isSearchOpen && (
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-4 animate-in fade-in slide-in-from-top-2 duration-300">
-                    <div className="relative">
-                        <iconify-icon icon="solar:magnifer-linear" className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/70"></iconify-icon>
-                        <input
-                            autoFocus
-                            type="text"
-                            placeholder="Search for coffee, pizza, desserts..."
-                            className="w-full bg-secondary/30 border border-primary/20 rounded-2xl py-3 pl-12 pr-12 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all text-primary placeholder:text-primary/50"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
+                <div className="fixed inset-0 z-50 bg-background overflow-y-auto animate-in zoom-in-95 fade-in duration-300">
+                    <div className="sticky top-0 z-10 bg-background/95 backdrop-blur-md border-b border-primary/10 p-4 sm:p-6 flex items-center gap-4">
+                        <div className="relative flex-1 max-w-3xl mx-auto">
+                            <iconify-icon icon="solar:magnifer-linear" className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/70"></iconify-icon>
+                            <input
+                                autoFocus
+                                type="text"
+                                placeholder="Search for coffee, pizza, desserts..."
+                                className="w-full bg-secondary/30 border border-primary/20 rounded-2xl py-3 pl-12 pr-12 font-sans text-base focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all text-primary placeholder:text-primary/50"
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                            {searchQuery && (
+                                <button
+                                    onClick={() => setSearchQuery('')}
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-primary/40 hover:text-primary transition-colors"
+                                >
+                                    <iconify-icon icon="solar:close-circle-bold" width="20"></iconify-icon>
+                                </button>
+                            )}
+                        </div>
                         <button
                             onClick={() => {
                                 setIsSearchOpen(false);
                                 setSearchQuery('');
                             }}
-                            className="absolute right-4 top-1/2 -translate-y-1/2 text-primary/60 hover:text-primary transition-colors flex items-center justify-center"
+                            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-secondary/50 text-primary flex items-center justify-center hover:bg-primary hover:text-background transition-colors flex-shrink-0"
                         >
-                            <iconify-icon icon="solar:close-circle-linear" width="20"></iconify-icon>
+                            <iconify-icon icon="solar:close-circle-linear" width="24"></iconify-icon>
                         </button>
+                    </div>
+
+                    <div className="p-4 sm:p-6 max-w-7xl mx-auto pb-32">
+                        {searchQuery ? (
+                            displayedSections.length > 0 ? (
+                                <div className="space-y-10">
+                                    {displayedSections.map(section => {
+                                        return (
+                                            <div key={`search-${section.id}`} className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                                                <div className="flex items-center gap-3 mb-4">
+                                                    <h3 className="font-playfair text-xl sm:text-2xl text-primary font-bold">{section.title}</h3>
+                                                    <span className="h-px flex-1 bg-primary/20"></span>
+                                                </div>
+                                                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                                                    {section.items.map((item, index) => {
+                                                        // Render appropriate card based on section type
+                                                        if (section.id === 'special-blue-dream') return <SpecialBlueDreamCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'whispers-of-love') return <WhispersOfLoveCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'the-summer-edit' || section.id === 'desserts') return <SummerEditCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'the-monsoon-edit') return <MonsoonEditCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'the-matcha-edit') return <MatchaCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'pizza') return <PizzaItemCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'cold-frappe') return <ColdFrappeItemCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'bites' || section.id === 'garlic-bread' || section.id === 'calzone' || section.id === 'fries') return <BitesItemCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'shakes') return <ShakeItemCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'dessert') return <DessertItemCard key={`${item.name}-${index}`} item={item} />;
+                                                        if (section.id === 'craft-menu') return <CraftMenuItemCard key={`${item.name}-${index}`} item={item} />;
+                                                        return <MenuItemCard key={`${item.name}-${index}`} item={item} />;
+                                                    })}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            ) : (
+                                <div className="text-center py-20 text-primary/60 flex flex-col items-center">
+                                    <div className="w-20 h-20 bg-secondary/30 rounded-full flex items-center justify-center mb-4">
+                                        <iconify-icon icon="solar:ghost-smile-linear" width="40"></iconify-icon>
+                                    </div>
+                                    <p className="font-sans text-lg">No matches found for "{searchQuery}"</p>
+                                    <p className="font-sans text-sm mt-2 opacity-70">Try searching for something else</p>
+                                </div>
+                            )
+                        ) : (
+                            <div className="text-center py-20 text-primary/40 flex flex-col items-center">
+                                <div className="w-20 h-20 bg-secondary/30 rounded-full flex items-center justify-center mb-4">
+                                    <iconify-icon icon="solar:magnifer-linear" width="40"></iconify-icon>
+                                </div>
+                                <p className="font-sans text-lg font-medium">What are you craving today?</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             )}
@@ -900,16 +961,15 @@ export default function MenuClient({
             </nav>
 
             <main className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-12">
-                {displayedSections.length === 0 ? (
-                    <div className="text-center py-20">
-                        <iconify-icon icon="solar:map-point-remove-linear" width="48" className="text-primary/40 mb-4"></iconify-icon>
-                        <p className="text-primary/70 font-sans">No items matched your search.</p>
+                {sections.length === 0 ? (
+                    <div className="text-center py-12 text-primary font-script text-xl">
+                        No menu items available
                     </div>
-                ) : displayedSections.map((section, index) => {
-                    // Group pizza, garlic-bread, and calzone together
-                    if (section.id === 'pizza') {
-                        const garlicBreadSection = displayedSections.find(s => s.id === 'garlic-bread');
-                        const calzoneSection = displayedSections.find(s => s.id === 'calzone');
+                ) : sections.map((section, index) => {
+                    const isPizzaGroup = section.id === 'pizza';
+                    if (isPizzaGroup) {
+                        const garlicBreadSection = sections.find(s => s.id === 'garlic-bread');
+                        const calzoneSection = sections.find(s => s.id === 'calzone');
 
                         return (
                             <section key={section.id} id="pizza" className="reveal -mx-4 sm:-mx-6 px-4 sm:px-6 py-8 bg-gradient-to-br from-[#f5e6d3] via-background to-[#ede0d0] rounded-2xl border border-primary/10 shadow-sm">
