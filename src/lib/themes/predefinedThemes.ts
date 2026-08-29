@@ -2,6 +2,48 @@ import { ThemeConfig } from './themeTypes';
 
 export const PREDEFINED_THEMES: ThemeConfig[] = [
   {
+    "id": "cafe-950-default",
+    "name": "Cafe 9:50 Original",
+    "description": "The classic, original cozy cafe theme.",
+    "colors": {
+      "background": "#F5E6D3",
+      "surface": "#FFFEFB",
+      "primary": "#6B3A20",
+      "secondary": "#E8D8C8",
+      "accent": "#D4A373",
+      "text": "#4A2C18",
+      "muted": "#8B6D55",
+      "border": "#D8C8B8"
+    },
+    "typography": {
+      "heading": "playfair",
+      "body": "inter"
+    },
+    "radius": {
+      "small": "0.375rem",
+      "medium": "0.75rem",
+      "large": "1rem"
+    },
+    "shadows": {
+      "card": "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
+      "floating": "0 10px 25px -5px rgba(0, 0, 0, 0.1)"
+    },
+    "spacing": {
+      "xs": "0.5rem",
+      "sm": "1rem",
+      "md": "1.5rem",
+      "lg": "2rem",
+      "xl": "3rem"
+    },
+    "components": {
+      "cardStyle": "soft",
+      "buttonStyle": "rounded",
+      "categoryStyle": "pill",
+      "headingStyle": "serif",
+      "imageStyle": "rounded"
+    }
+  },
+  {
     "id": "warm-artisan",
     "name": "Warm Artisan",
     "description": "Warm cream tones with handcrafted terracotta accents.",
