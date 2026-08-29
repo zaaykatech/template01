@@ -2,8 +2,8 @@ import json
 
 themes = [
     {
-        "id": "cafe-950-default",
-        "name": "Cafe 9:50 Original",
+        "id": "cappuccino",
+        "name": "Cappuccino",
         "description": "The classic, original cozy cafe theme.",
         "colors": {
             "background": "#F5E6D3",
