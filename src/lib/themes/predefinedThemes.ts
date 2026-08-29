@@ -296,6 +296,48 @@ export const PREDEFINED_THEMES: ThemeConfig[] = [
     }
   },
   {
+    "id": "pure-monochrome",
+    "name": "Pure Monochrome",
+    "description": "Ultra-minimal premium restaurant in black and white.",
+    "colors": {
+      "background": "#FFFFFF",
+      "surface": "#FAFAFA",
+      "primary": "#000000",
+      "secondary": "#333333",
+      "accent": "#666666",
+      "text": "#111111",
+      "muted": "#777777",
+      "border": "#D8D8D8"
+    },
+    "typography": {
+      "heading": "playfair",
+      "body": "inter"
+    },
+    "radius": {
+      "small": "0",
+      "medium": "0",
+      "large": "0"
+    },
+    "shadows": {
+      "card": "none",
+      "floating": "0 10px 30px rgba(0,0,0,0.1)"
+    },
+    "spacing": {
+      "xs": "1rem",
+      "sm": "2rem",
+      "md": "3rem",
+      "lg": "4rem",
+      "xl": "5rem"
+    },
+    "components": {
+      "cardStyle": "flat",
+      "buttonStyle": "square",
+      "categoryStyle": "pill",
+      "headingStyle": "serif",
+      "imageStyle": "square"
+    }
+  },
+  {
     "id": "soft-blush",
     "name": "Soft Blush",
     "description": "Elegant boutique bakery in rose and coral.",

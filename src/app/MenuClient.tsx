@@ -407,7 +407,7 @@ const SectionComponent = ({ section: originalSection }: { section: MenuSection }
                             <span className="h-px flex-1 bg-[#FFB300]/30"></span>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                            {section.items.slice(0, 8).map(item => <SummerEditCard key={item.name} item={item} />)}
+                            {section.items.slice(0, 8).map((item, index) => <SummerEditCard key={`${item.name}-${index}`} item={item} />)}
                         </div>
                     </div>
                     {/* Desserts */}
@@ -418,7 +418,7 @@ const SectionComponent = ({ section: originalSection }: { section: MenuSection }
                             <span className="h-px flex-1 bg-[#FFB300]/30"></span>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                            {section.items.slice(8).map(item => <SummerEditCard key={item.name} item={item} />)}
+                            {section.items.slice(8).map((item, index) => <SummerEditCard key={`${item.name}-${index + 8}`} item={item} />)}
                         </div>
                     </div>
                 </div>
@@ -444,7 +444,7 @@ const SectionComponent = ({ section: originalSection }: { section: MenuSection }
                         {section.subtitle && <p className="font-sans text-xs text-[#1565C0]/80 italic max-w-sm mx-auto leading-relaxed">{section.subtitle}</p>}
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        {section.items.map(item => <MonsoonEditCard key={item.name} item={item} />)}
+                        {section.items.map((item, index) => <MonsoonEditCard key={`${item.name}-${index}`} item={item} />)}
                     </div>
                 </div>
             </section>
@@ -484,7 +484,7 @@ const SectionComponent = ({ section: originalSection }: { section: MenuSection }
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {section.items.map(item => <PizzaItemCard key={item.name} item={item} />)}
+                        {section.items.map((item, index) => <PizzaItemCard key={`${item.name}-${index}`} item={item} />)}
                     </div>
                 </div>
             </section>
@@ -569,7 +569,7 @@ const SectionComponent = ({ section: originalSection }: { section: MenuSection }
                 <p className="font-sans text-xs text-center text-[#6B3A20]/80 italic -mt-4 mb-6 max-w-lg mx-auto whitespace-pre-line">{section.subtitle}</p>
             )}
             <div className={`grid ${gridCols} gap-3`}>
-                {section.items.map(item => <CardComponent key={item.name} item={item} />)}
+                {section.items.map((item, index) => <CardComponent key={`${item.name}-${index}`} item={item} />)}
             </div>
             {section.id === 'beverage-companions' && (
                 <div className="mt-12 text-center space-y-2 reveal">
@@ -592,8 +592,8 @@ export default function MenuClient({
     initialSections: MenuSection[], 
     initialTheme: ThemeConfig 
 }) {
-    const sections = initialSections;
-    const theme = initialTheme;
+    const [sections] = useState<MenuSection[]>(initialSections);
+    const [theme] = useState<ThemeConfig>(initialTheme);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     
@@ -603,7 +603,6 @@ export default function MenuClient({
     const [activeSection, setActiveSection] = useState<string>('');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const navRef = useRef<HTMLUListElement>(null);
-    const navLinks = sections;
 
     useEffect(() => {
         if (theme) {
@@ -704,6 +703,18 @@ export default function MenuClient({
             </div>
         );
     }
+
+    const displayedSections = searchQuery
+        ? sections.map(section => ({
+            ...section,
+            items: section.items.filter(item =>
+                item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                item.description?.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+        })).filter(section => section.items.length > 0)
+        : sections;
+
+    const navLinks = displayedSections;
 
     return (
         <div style={theme ? {
@@ -841,100 +852,26 @@ export default function MenuClient({
             </header>
 
             {isSearchOpen && (
-                <div className="fixed inset-0 z-[110] bg-secondary px-6 py-8 animate-in fade-in slide-in-from-top duration-300">
-                    <div className="max-w-7xl mx-auto">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="flex-1 relative">
-                                <iconify-icon icon="solar:magnifer-linear" className="absolute left-4 top-1/2 -translate-y-1/2 text-text/70"></iconify-icon>
-                                <input
-                                    autoFocus
-                                    type="text"
-                                    placeholder="Search for coffee, pizza, desserts..."
-                                    className="w-full bg-gray-50 border border-gray-100 rounded-2xl py-4 pl-12 pr-4 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                                    value={searchQuery}
-                                    onChange={(e) => setSearchQuery(e.target.value)}
-                                />
-                            </div>
-                            <button
-                                onClick={() => {
-                                    setIsSearchOpen(false);
-                                    setSearchQuery('');
-                                }}
-                                className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-gray-100 transition-colors"
-                            >
-                                <iconify-icon icon="solar:close-circle-linear" width="24"></iconify-icon>
-                            </button>
-                        </div>
-
-                        <div className="overflow-y-auto max-h-[calc(100vh-180px)] no-scrollbar pb-20">
-                            {searchQuery ? (
-                                <div className="space-y-8">
-                                    {sections.map(section => {
-                                        const filteredItems = section.items.filter(item =>
-                                            item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                            item.description?.toLowerCase().includes(searchQuery.toLowerCase())
-                                        );
-
-                                        if (filteredItems.length === 0) return null;
-
-                                        return (
-                                            <div key={section.id}>
-                                                <h3 className="font-script text-2xl text-primary mb-4 flex items-center gap-3">
-                                                    {section.title}
-                                                    <span className="h-px flex-1 bg-gray-100"></span>
-                                                </h3>
-                                                {(() => {
-                                                    const { CardComponent, gridCols } = getSectionConfig(section.id);
-                                                    return (
-                                                        <div className={`grid ${gridCols} gap-3`}>
-                                                            {filteredItems.map(item => (
-                                                                <CardComponent key={item.name} item={item} />
-                                                            ))}
-                                                        </div>
-                                                    );
-                                                })()}
-                                            </div>
-                                        )
-                                    })}
-                                    {sections.every(section =>
-                                        !section.items.some(item =>
-                                            item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                            item.description?.toLowerCase().includes(searchQuery.toLowerCase())
-                                        )
-                                    ) && (
-                                            <div className="text-center py-20">
-                                                <iconify-icon icon="solar:map-point-remove-linear" width="48" className="text-gray-200 mb-4"></iconify-icon>
-                                                <p className="text-text/70 font-sans">No items matched your search.</p>
-                                            </div>
-                                        )}
-                                </div>
-                            ) : (
-                                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                                    {sections.map(section => (
-                                        <button
-                                            key={section.id}
-                                            onClick={() => {
-                                                setIsSearchOpen(false);
-                                                setSearchQuery('');
-                                                const element = document.getElementById(section.id);
-                                                if (element) {
-                                                    const headerOffset = 100;
-                                                    const elementPosition = element.getBoundingClientRect().top;
-                                                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                                                    window.scrollTo({
-                                                        top: offsetPosition,
-                                                        behavior: 'smooth'
-                                                    });
-                                                }
-                                            }}
-                                            className="p-4 rounded-xl bg-secondary/50 border border-primary/10 text-center hover:shadow-md hover:-translate-y-1 hover:bg-secondary transition-all duration-300 group flex items-center justify-center h-full"
-                                        >
-                                            <p className="font-sans text-sm font-semibold text-primary group-hover:text-primary transition-colors">{section.title}</p>
-                                        </button>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 mb-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                    <div className="relative">
+                        <iconify-icon icon="solar:magnifer-linear" className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/70"></iconify-icon>
+                        <input
+                            autoFocus
+                            type="text"
+                            placeholder="Search for coffee, pizza, desserts..."
+                            className="w-full bg-secondary/30 border border-primary/20 rounded-2xl py-3 pl-12 pr-12 font-sans text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all text-primary placeholder:text-primary/50"
+                            value={searchQuery}
+                            onChange={(e) => setSearchQuery(e.target.value)}
+                        />
+                        <button
+                            onClick={() => {
+                                setIsSearchOpen(false);
+                                setSearchQuery('');
+                            }}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 text-primary/60 hover:text-primary transition-colors flex items-center justify-center"
+                        >
+                            <iconify-icon icon="solar:close-circle-linear" width="20"></iconify-icon>
+                        </button>
                     </div>
                 </div>
             )}
@@ -963,13 +900,16 @@ export default function MenuClient({
             </nav>
 
             <main className="max-w-7xl mx-auto px-4 sm:px-6 space-y-8 sm:space-y-12">
-
-
-                {sections.map((section, index) => {
+                {displayedSections.length === 0 ? (
+                    <div className="text-center py-20">
+                        <iconify-icon icon="solar:map-point-remove-linear" width="48" className="text-primary/40 mb-4"></iconify-icon>
+                        <p className="text-primary/70 font-sans">No items matched your search.</p>
+                    </div>
+                ) : displayedSections.map((section, index) => {
                     // Group pizza, garlic-bread, and calzone together
                     if (section.id === 'pizza') {
-                        const garlicBreadSection = sections.find(s => s.id === 'garlic-bread');
-                        const calzoneSection = sections.find(s => s.id === 'calzone');
+                        const garlicBreadSection = displayedSections.find(s => s.id === 'garlic-bread');
+                        const calzoneSection = displayedSections.find(s => s.id === 'calzone');
 
                         return (
                             <section key={section.id} id="pizza" className="reveal -mx-4 sm:-mx-6 px-4 sm:px-6 py-8 bg-gradient-to-br from-[#f5e6d3] via-background to-[#ede0d0] rounded-2xl border border-primary/10 shadow-sm">
@@ -1005,7 +945,7 @@ export default function MenuClient({
                                         </div>
 
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                                            {section.items.map(item => <PizzaItemCard key={item.name} item={item} />)}
+                                            {section.items.map((item, index) => <PizzaItemCard key={`${item.name}-${index}`} item={item} />)}
                                         </div>
                                     </div>
 
@@ -1017,7 +957,7 @@ export default function MenuClient({
                                                 <span className="h-px flex-1 bg-primary/20 mb-2"></span>
                                             </div>
                                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                                                {garlicBreadSection.items.map(item => <MenuItemCard key={item.name} item={item} />)}
+                                                {garlicBreadSection.items.map((item, index) => <MenuItemCard key={`${item.name}-${index}`} item={item} />)}
                                             </div>
                                         </div>
                                     )}
@@ -1033,7 +973,7 @@ export default function MenuClient({
                                                 <p className="font-sans text-xs text-center text-[#6B3A20]/80 italic -mt-4 mb-6 max-w-lg mx-auto whitespace-pre-line">{calzoneSection.subtitle}</p>
                                             )}
                                             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-                                                {calzoneSection.items.map(item => <MenuItemCard key={item.name} item={item} />)}
+                                                {calzoneSection.items.map((item, index) => <MenuItemCard key={`${item.name}-${index}`} item={item} />)}
                                             </div>
                                         </div>
                                     )}
@@ -1057,7 +997,7 @@ export default function MenuClient({
 
             <footer className="mt-8 text-center pt-6 pb-4 px-2 sm:px-6 border-t border-primary/10 bg-secondary/40 reveal">
                 <div className="flex flex-col items-center">
-                    <div className="grid grid-cols-4 gap-2 sm:gap-6 mb-6 text-primary w-full max-w-3xl">
+                    <div className="grid grid-cols-4 gap-2 sm:gap-6 mb-8 text-primary w-full max-w-3xl px-2 sm:px-0">
                         <a href={theme?.instagramUrl || "#"} target="_blank" rel="noopener noreferrer" className="hover:scale-105 transition-transform flex flex-col items-center justify-start gap-1.5 sm:gap-2 text-center">
                             <iconify-icon icon="hugeicons:instagram" width="22" className="sm:w-[24px]"></iconify-icon>
                             <span className="font-sans text-[9.5px] sm:text-[11px] lowercase tracking-tight sm:tracking-wider leading-tight">@cafenine50</span>
