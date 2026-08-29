@@ -852,7 +852,7 @@ export default function MenuClient({
             </header>
 
             {isSearchOpen && (
-                <div className="fixed inset-0 z-50 bg-background overflow-y-auto animate-in zoom-in-95 fade-in duration-300">
+                <div className="fixed inset-0 z-[200] bg-background overflow-y-auto animate-in zoom-in-95 fade-in duration-300">
                     <div className="sticky top-0 z-10 bg-background/95 backdrop-blur-md border-b border-primary/10 p-4 sm:p-6 flex items-center gap-4">
                         <div className="relative flex-1 max-w-3xl mx-auto">
                             <iconify-icon icon="solar:magnifer-linear" className="absolute left-4 top-1/2 -translate-y-1/2 text-primary/70"></iconify-icon>
